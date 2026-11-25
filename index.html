@@ -577,6 +577,10 @@
     @media (max-width: 600px) {
       .hero .cta-row .btn { flex: 1 1 100%; }
       .contact-box .cta-row { flex-direction: column; align-items: stretch; }
+      /* let the price table fit a phone without sideways scrolling */
+      table { min-width: 0; font-size: 0.84rem; }
+      th, td { padding: 11px 8px; }
+      th:nth-child(5), td:nth-child(5) { display: none; }
     }
   </style>
 </head>
