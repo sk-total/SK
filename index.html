@@ -655,12 +655,6 @@
       letter-spacing: -0.02em;
     }
 
-    /* 매월 할인 금액은 bworld 포인트 레드 */
-    #pricing tbody td:nth-child(3) {
-      color: var(--red);
-      font-weight: 700;
-    }
-
     /* 표 아래 설명 카드는 위에서부터 자연스럽게 */
     #pricing .grid-2 > .card {
       justify-content: flex-start;
@@ -918,158 +912,401 @@
       color: #7c828f;
     }
 
-    /* ---------- 요금표 : 모바일 결합 비교 ---------- */
-    .price-legend {
+    /* ---------- 대표 요금 카드 (bworld 다이렉트샵 요금 카드 스타일) ---------- */
+    .rate-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin: 30px 0 42px;
+    }
+
+    .rate-card {
+      position: relative;
       display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 8px 16px;
-      margin-bottom: 14px;
-      font-size: 0.85rem;
-      color: var(--muted);
+      flex-direction: column;
+      padding: 24px 24px 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow-soft);
     }
 
-    .legend-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      white-space: nowrap;
+    .rate-card.is-main {
+      border-color: #cfc4f7;
+      box-shadow: 0 20px 48px rgba(54, 23, 206, 0.11);
     }
 
-    .legend-chip {
-      display: inline-block;
-      padding: 2px 10px;
-      border-radius: 999px;
-      font-size: 0.76rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
-
-    .legend-chip.off { background: #eef0f5; color: #5b6070; }
-    .legend-chip.on { background: var(--accent-soft); color: var(--primary); }
-
-    .price-table { min-width: 720px; }
-
-    .price-table .price-group th {
-      padding: 11px 18px;
+    .rate-badge {
+      align-self: flex-start;
+      padding: 4px 11px;
+      border-radius: 7px;
       background: var(--primary);
       color: #fff;
-      font-size: 0.95rem;
-      border-bottom: none;
-    }
-
-    .price-table .price-group em {
-      font-style: normal;
-      font-weight: 600;
-      color: var(--lav);
-    }
-
-    .price-table .grp-note {
-      float: right;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: rgba(255, 255, 255, 0.82);
-    }
-
-    .price-table .sub-name {
-      display: block;
-      margin-top: 2px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--muted);
-    }
-
-    #pricing .price-table th.col-on,
-    #pricing .price-table td.col-on { background: #f7f5ff; }
-
-    #pricing .price-table td.col-on {
+      font-size: 0.74rem;
       font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.5;
+    }
+
+    .rate-badge.is-soft {
+      background: #efedff;
       color: var(--primary);
-      font-size: 1.02rem;
-      letter-spacing: -0.02em;
+      box-shadow: inset 0 0 0 1px #ded5ff;
     }
 
-    .diff-badge {
-      display: block;
-      width: fit-content;
-      margin-top: 3px;
-      padding: 1px 7px;
-      border-radius: 999px;
-      background: rgba(255, 64, 78, 0.1);
-      color: var(--red);
-      font-size: 0.73rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      white-space: nowrap;
+    .rate-head {
+      padding: 14px 0 4px;
+      text-align: center;
     }
 
-    .card-sub {
-      margin-top: 4px;
-      font-size: 0.84rem;
+    .rate-head h3 {
+      font-size: 1.42rem;
+      font-weight: 900;
+      line-height: 1.3;
+      letter-spacing: -0.045em;
+    }
+
+    .rate-head h3 .rate-plus {
+      margin: 0 7px;
+      color: var(--primary);
+    }
+
+    .rate-head p {
+      margin-top: 7px;
+      font-size: 0.87rem;
       color: var(--muted);
+      line-height: 1.55;
     }
 
-    .card-sub .on { color: var(--primary); font-weight: 800; }
+    .rate-ladder { margin-top: 16px; }
 
-    .tv-block + .tv-block { margin-top: 14px; }
+    .ld-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 10px 0;
+      border-top: 1px solid #f0f1f5;
+    }
 
-    .tv-title {
-      margin: 10px 0 6px;
-      font-size: 0.88rem;
+    .ld-row:first-child { border-top: 1px solid #e6e7ee; }
+
+    .ld-label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #4b4f5c;
+    }
+
+    .ld-label small {
+      display: block;
+      margin-top: 1px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: #9aa0ad;
+    }
+
+    .ld-strike {
+      font-size: 1.04rem;
+      font-weight: 700;
+      color: #9aa0ad;
+      text-decoration: line-through;
+      text-decoration-thickness: 1.5px;
+      text-decoration-color: #b9bcc9;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .ld-val {
+      font-size: 1.04rem;
+      font-weight: 800;
+      color: var(--text);
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .ld-val.is-minus { color: var(--red); }
+
+    .ld-row.is-mob .ld-label { font-weight: 800; color: var(--text); }
+    .ld-row.is-mob .ld-val { color: var(--primary); }
+
+    .ld-row.is-subtotal { padding: 11px 0; }
+    .ld-row.is-subtotal .ld-label { font-weight: 800; color: var(--text); }
+    .ld-row.is-subtotal .ld-val { font-size: 1.02rem; }
+
+    .ld-sub {
+      list-style: none;
+      margin: 0 0 12px;
+    }
+
+    .ld-sub li {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 2px 0 2px 16px;
+      font-size: 0.86rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .ld-sub li::before {
+      content: "ㄴ";
+      position: absolute;
+      left: 2px;
+      top: 3px;
+      color: #c3c6d2;
+      font-size: 0.78rem;
+    }
+
+    .ld-sub li span:last-child {
+      font-weight: 700;
+      color: #4b4f5c;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .ld-total {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 4px;
+      padding: 13px 16px;
+      border-radius: 14px;
+      background: var(--accent-soft);
+    }
+
+    .ld-total-label {
+      display: block;
+      font-size: 0.85rem;
       font-weight: 800;
       color: #3a2e7a;
+      letter-spacing: -0.02em;
     }
 
-    .tv-title span {
-      font-size: 0.82rem;
+    .ld-total-note {
+      display: block;
+      margin-top: 2px;
+      font-size: 0.77rem;
       font-weight: 600;
+      color: #7570a6;
+    }
+
+    .ld-total-val {
+      font-size: 1.85rem;
+      font-weight: 900;
+      line-height: 1;
+      color: var(--red);
+      letter-spacing: -0.04em;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .ld-total-val small {
+      margin-left: 2px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .rate-gift {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-top: 14px;
+      padding: 10px 12px;
+      border-radius: 11px;
+      background: #f7f5ff;
+      box-shadow: inset 0 0 0 1px #ece6ff;
+      font-size: 0.81rem;
+      line-height: 1.55;
+      color: #43405c;
+    }
+
+    .rate-gift svg { flex: none; margin-top: 1px; }
+    .rate-gift strong { color: var(--primary); font-weight: 800; }
+
+    .rate-foot {
+      margin-top: 9px;
+      font-size: 0.75rem;
+      line-height: 1.6;
+      color: #8b8f9c;
+    }
+
+    .rate-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: auto;
+      padding-top: 16px;
+    }
+
+    /* ---------- 전체 요금안내표 : bworld 요금표 스타일 ---------- */
+    .rate-board { margin-top: 6px; }
+
+    .rate-board-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 4px 14px;
+      margin-bottom: 10px;
+    }
+
+    .rate-board-head h3 {
+      font-size: 1.16rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    .rate-board-head > span {
+      font-size: 0.8rem;
       color: var(--muted);
     }
 
-    .tv-list { list-style: none; }
+    .bw-wrap {
+      overflow-x: auto;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+    }
 
-    .tv-list li {
+    .bw-table {
+      width: 100%;
+      min-width: 760px;
+      border-collapse: collapse;
+      border-top: 2px solid #111319;
+      font-size: 0.92rem;
+    }
+
+    .bw-table thead th {
+      padding: 12px 8px;
+      background: #f5f5f7;
+      border-bottom: 1px solid #e3e4ea;
+      font-size: 0.84rem;
+      font-weight: 800;
+      color: #2a2d35;
+      text-align: center;
+      letter-spacing: -0.02em;
+      line-height: 1.4;
+      white-space: normal;
+    }
+
+    .bw-table thead th span {
+      display: block;
+      margin-top: 2px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #7c828f;
+    }
+
+    .bw-table tbody th,
+    .bw-table tbody td {
+      padding: 13px 8px;
+      border-bottom: 1px solid #eceef3;
+      text-align: center;
+      color: #2a2d35;
+      font-variant-numeric: tabular-nums;
+      background: #fff;
+    }
+
+    .bw-table tbody tr.is-main-row th,
+    .bw-table tbody tr.is-main-row td { background: #faf8ff; }
+
+    .bw-table .plan-row th {
+      padding: 10px 14px;
+      background: #f5f5f7;
+      border-bottom: 1px solid #e3e4ea;
+      text-align: left;
+      font-size: 0.9rem;
+      font-weight: 900;
+      color: #111319;
+      letter-spacing: -0.02em;
+    }
+
+    .bw-table .plan-row em {
+      margin-left: 5px;
+      font-style: normal;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .bw-table .plan-row .plan-note {
+      float: right;
+      padding-top: 1px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: #7c828f;
+    }
+
+    .bw-table td.c-name {
+      text-align: left;
+      padding-left: 14px;
+      font-weight: 700;
+    }
+
+    .bw-table td.c-name .c-tag {
+      display: inline-block;
+      margin-left: 6px;
+      padding: 1px 7px;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.67rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      vertical-align: 2px;
+    }
+
+    .bw-table td.c-name .c-ch {
+      display: block;
+      margin-top: 1px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: #8b8f9c;
+    }
+
+    .bw-table td.c-disc { font-weight: 700; }
+    .bw-table td.c-mob { color: var(--primary); font-weight: 700; }
+    .bw-table td.c-final {
+      color: var(--red);
+      font-size: 1.04rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .bw-table td.c-benefit { font-weight: 700; }
+
+    .bw-table td.c-benefit span {
+      display: block;
+      margin-top: 2px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: #7c828f;
+    }
+
+    .rate-info {
+      margin-top: 26px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .rate-info h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    .rate-info .info-list {
       display: grid;
-      grid-template-columns: 42px 1fr auto 1fr;
-      align-items: center;
-      gap: 6px;
-      padding: 7px 10px;
-      border-radius: 10px;
-      background: #f8f8fc;
-      font-size: 0.9rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px 30px;
     }
 
-    .tv-list li + li { margin-top: 5px; }
-
-    .tv-speed { font-size: 0.8rem; font-weight: 800; color: var(--muted); }
-    .tv-off { text-align: right; font-weight: 600; color: #4b4f5c; }
-    .tv-arrow { font-size: 0.82rem; color: #b9bcc9; }
-    .tv-on { text-align: right; font-weight: 800; color: var(--primary); }
-
-    .info-list { list-style: none; margin-top: 8px; }
-
-    .info-list li {
-      position: relative;
-      padding-left: 13px;
-      font-size: 0.9rem;
-      line-height: 1.62;
-      color: #3f4350;
-    }
-
-    .info-list li + li { margin-top: 7px; }
-
-    .info-list li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.65em;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--lav);
-    }
-
-    .info-list strong { font-weight: 800; color: var(--text); }
+    .rate-info .info-list li + li { margin-top: 0; }
 
     /* ---------- Responsive ---------- */
     @media (min-width: 1000px) {
@@ -1191,98 +1428,111 @@
       }
     }
 
-    /* ---------- 요금표 반응형 : 표 → 카드 스택 ---------- */
-    @media (max-width: 720px) {
-      .price-legend {
-        gap: 6px 12px;
-        font-size: 0.8rem;
+    /* ---------- 요금 카드 · 요금표 반응형 ---------- */
+    @media (max-width: 900px) {
+      .rate-cards {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin: 24px 0 34px;
       }
 
-      .price-wrap {
-        overflow: visible;
-        background: transparent;
-        border: none;
-        box-shadow: none;
-      }
+      .rate-info .info-list { grid-template-columns: 1fr; }
+    }
 
-      .price-table,
-      .price-table tbody,
-      .price-table tr,
-      .price-table td {
+    @media (max-width: 860px) {
+      .rate-card { padding: 20px 18px 18px; border-radius: 18px; }
+      .rate-head h3 { font-size: 1.24rem; }
+      .rate-head p { font-size: 0.82rem; }
+      .ld-total-val { font-size: 1.6rem; }
+      .ld-total { padding: 12px 13px; }
+      .ld-total-label { font-size: 0.8rem; }
+      .rate-board-head h3 { font-size: 1.06rem; }
+
+      .bw-table,
+      .bw-table tbody,
+      .bw-table tr,
+      .bw-table tbody th,
+      .bw-table td {
         display: block;
         width: auto;
       }
 
-      .price-table { min-width: 0; font-size: 0.92rem; }
-      .price-table thead { display: none; }
-
-      .price-table .price-group { margin: 22px 0 9px; }
-      .price-table .price-group:first-child { margin-top: 0; }
-
-      .price-table .price-group th {
-        padding: 10px 14px;
-        border-radius: 12px;
-        line-height: 1.45;
+      .bw-table {
+        min-width: 0;
+        border-top: 0;
+        font-size: 0.9rem;
       }
 
-      .price-table .grp-note {
+      .bw-table thead { display: none; }
+
+      .bw-table .plan-row { margin: 20px 0 8px; }
+      .bw-table .plan-row:first-child { margin-top: 0; }
+
+      .bw-table .plan-row th {
+        padding: 10px 14px;
+        border-bottom: 0;
+        border-radius: 10px;
+        line-height: 1.5;
+      }
+
+      .bw-table .plan-row .plan-note {
         float: none;
         display: block;
         margin-top: 2px;
-        font-size: 0.74rem;
+        font-size: 0.73rem;
       }
 
-      .price-table tbody tr:not(.price-group) {
+      .bw-table tbody tr:not(.plan-row) {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 9px;
         padding: 14px;
-        margin-bottom: 9px;
+        margin-bottom: 8px;
         background: #fff;
         border: 1px solid #e9eaf1;
-        border-radius: 16px;
+        border-radius: 14px;
       }
 
-      .price-table tbody tr:not(.price-group) td {
+      .bw-table tbody tr:not(.plan-row) td {
         padding: 0;
+        background: transparent;
         border: none;
+        text-align: left;
       }
 
-      .price-table td::before {
+      .bw-table tbody tr:not(.plan-row) td::before {
         content: attr(data-label);
         display: block;
-        margin-bottom: 2px;
-        font-size: 0.71rem;
+        margin-bottom: 1px;
+        font-size: 0.7rem;
         font-weight: 700;
         color: #9296a6;
       }
 
-      .price-table td:nth-child(1) {
+      .bw-table tbody tr:not(.plan-row) td.c-name {
         grid-column: 1 / -1;
+        padding-left: 0;
         font-size: 1rem;
       }
 
-      .price-table td:nth-child(1)::before { display: none; }
+      .bw-table tbody tr:not(.plan-row) td.c-name::before { display: none; }
 
-      .price-table tbody tr:not(.price-group) td:nth-child(4),
-      .price-table tbody tr:not(.price-group) td:nth-child(5) {
+      .bw-table tbody tr:not(.plan-row) td.c-final {
+        grid-column: 1 / -1;
         padding: 8px 10px;
-        border-radius: 11px;
+        border-radius: 10px;
+        background: var(--accent-soft);
+        font-size: 1.04rem;
+      }
+
+      .bw-table tbody tr:not(.plan-row) td.c-benefit {
+        grid-column: 1 / -1;
+        padding: 8px 10px;
+        border-radius: 10px;
         background: #f7f8fb;
       }
 
-      #pricing .price-table tbody tr:not(.price-group) td.col-on {
-        background: var(--accent-soft);
-      }
-
-      .price-table tbody tr:not(.price-group) td:nth-child(6) {
-        grid-column: 1 / -1;
-      }
-
-      .diff-badge {
-        margin-top: 2px;
-        font-size: 0.7rem;
-      }
+      .rate-info .info-list li { font-size: 0.87rem; }
     }
 
     @media (max-width: 380px) {
@@ -1485,152 +1735,226 @@
     </div>
   </section>
 
-  <!-- 4. 인터넷 요금 비교 -->
+  <!-- 4. 인터넷 요금 안내 (bworld 다이렉트샵 요금 카드 · 요금표 스타일) -->
   <section id="pricing">
     <div class="container">
       <div class="section-head">
         <span class="section-kicker">SK브로드밴드 요금</span>
-        <h2 class="section-title">기가 인터넷 100M · 500M · 1G, <span class="mark">모바일 결합</span>까지 월 실납부로 비교하세요</h2>
-        <p class="section-desc">36개월 약정 · 부가세 포함 기준입니다. SK 휴대폰을 결합하면 월 실납부가 더 낮아지고, 설치비는 인터넷 단독 <span class="num-violet">36,300원</span> / B tv 결합 <span class="num-violet">56,100원</span> 면제됩니다.</p>
+        <h2 class="section-title">500M 기가라이트 + B tv 스탠다드, <span class="mark">요금 할인</span>까지 그대로 계산해 드립니다</h2>
+        <p class="section-desc">36개월 약정 · 부가세 포함 기준입니다. 기준 월요금에서 <strong>매월 할인(요금할인)</strong>과 <strong>휴대폰 결합 할인</strong>을 빼면 실제 월 납부금액이 됩니다. 설치비는 인터넷 단독 <span class="num-violet">36,300원</span> / B tv 결합 <span class="num-violet">56,100원</span> 모두 면제됩니다.</p>
       </div>
 
-      <div class="price-legend">
-        <span class="legend-item"><span class="legend-chip off">미결합</span>SK 휴대폰 결합 없이</span>
-        <span class="legend-item"><span class="legend-chip on">모바일 결합</span>SKT 휴대폰 결합 시 · 일부 알뜰폰 포함</span>
-      </div>
-
-      <div class="table-wrap price-wrap">
-        <table class="price-table">
-          <thead>
-            <tr>
-              <th>상품 구성</th>
-              <th>기준요금</th>
-              <th>매월 할인</th>
-              <th>미결합 실납부</th>
-              <th class="col-on">모바일 결합 실납부</th>
-              <th>36개월 요금할인</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="price-group">
-              <th colspan="6">100M <em>광랜</em><span class="grp-note">설치비 면제 36,300원 · B tv 결합 시 56,100원</span></th>
-            </tr>
-            <tr>
-              <td data-label="상품 구성"><strong>인터넷 단독</strong></td>
-              <td data-label="기준요금">23,100원</td>
-              <td data-label="매월 할인">-3,850원</td>
-              <td data-label="미결합 실납부">19,250원</td>
-              <td class="col-on" data-label="모바일 결합 실납부">14,850원<span class="diff-badge">-4,400원 추가</span></td>
-              <td data-label="36개월 요금할인">138,600원</td>
-            </tr>
-            <tr>
-              <td data-label="상품 구성"><strong>인터넷 + B tv 스탠다드</strong><span class="sub-name">234CH</span></td>
-              <td data-label="기준요금">39,600원</td>
-              <td data-label="매월 할인">-11,000원</td>
-              <td data-label="미결합 실납부">28,600원</td>
-              <td class="col-on" data-label="모바일 결합 실납부">24,200원<span class="diff-badge">-4,400원 추가</span></td>
-              <td data-label="36개월 요금할인">396,000원</td>
-            </tr>
-            <tr>
-              <td data-label="상품 구성"><strong>인터넷 + B tv ALL</strong><span class="sub-name">254CH</span></td>
-              <td data-label="기준요금">42,900원</td>
-              <td data-label="매월 할인">-11,000원</td>
-              <td data-label="미결합 실납부">31,900원</td>
-              <td class="col-on" data-label="모바일 결합 실납부">27,500원<span class="diff-badge">-4,400원 추가</span></td>
-              <td data-label="36개월 요금할인">396,000원</td>
-            </tr>
-            <tr class="price-group">
-              <th colspan="6">500M <em>기가라이트</em><span class="grp-note">설치비 면제 36,300원 · B tv 결합 시 56,100원</span></th>
-            </tr>
-            <tr>
-              <td data-label="상품 구성"><strong>인터넷 단독</strong></td>
-              <td data-label="기준요금">34,100원</td>
-              <td data-label="매월 할인">-6,600원</td>
-              <td data-label="미결합 실납부">27,500원</td>
-              <td class="col-on" data-label="모바일 결합 실납부">16,500원<span class="diff-badge">-11,000원 추가</span></td>
-              <td data-label="36개월 요금할인">237,600원</td>
-            </tr>
-            <tr>
-              <td data-label="상품 구성"><strong>인터넷 + B tv 스탠다드</strong><span class="sub-name">234CH</span></td>
-              <td data-label="기준요금">46,200원</td>
-              <td data-label="매월 할인">-13,200원</td>
-              <td data-label="미결합 실납부">33,000원</td>
-              <td class="col-on" data-label="모바일 결합 실납부">26,400원<span class="diff-badge">-6,600원 추가</span></td>
-              <td data-label="36개월 요금할인">475,200원</td>
-            </tr>
-            <tr>
-              <td data-label="상품 구성"><strong>인터넷 + B tv ALL</strong><span class="sub-name">254CH</span></td>
-              <td data-label="기준요금">49,600원</td>
-              <td data-label="매월 할인">-13,200원</td>
-              <td data-label="미결합 실납부">36,400원</td>
-              <td class="col-on" data-label="모바일 결합 실납부">29,700원<span class="diff-badge">-6,700원 추가</span></td>
-              <td data-label="36개월 요금할인">475,200원</td>
-            </tr>
-            <tr class="price-group">
-              <th colspan="6">1G <em>기가</em><span class="grp-note">설치비 면제 36,300원 · B tv 결합 시 56,100원</span></th>
-            </tr>
-            <tr>
-              <td data-label="상품 구성"><strong>인터넷 단독</strong></td>
-              <td data-label="기준요금">39,600원</td>
-              <td data-label="매월 할인">-7,150원</td>
-              <td data-label="미결합 실납부">32,450원</td>
-              <td class="col-on" data-label="모바일 결합 실납부">19,250원<span class="diff-badge">-13,200원 추가</span></td>
-              <td data-label="36개월 요금할인">257,400원</td>
-            </tr>
-            <tr>
-              <td data-label="상품 구성"><strong>인터넷 + B tv 스탠다드</strong><span class="sub-name">234CH</span></td>
-              <td data-label="기준요금">51,700원</td>
-              <td data-label="매월 할인">-14,300원</td>
-              <td data-label="미결합 실납부">37,400원</td>
-              <td class="col-on" data-label="모바일 결합 실납부">28,600원<span class="diff-badge">-8,800원 추가</span></td>
-              <td data-label="36개월 요금할인">514,800원</td>
-            </tr>
-            <tr>
-              <td data-label="상품 구성"><strong>인터넷 + B tv ALL</strong><span class="sub-name">254CH</span></td>
-              <td data-label="기준요금">55,000원</td>
-              <td data-label="매월 할인">-14,300원</td>
-              <td data-label="미결합 실납부">40,700원</td>
-              <td class="col-on" data-label="모바일 결합 실납부">31,900원<span class="diff-badge">-8,800원 추가</span></td>
-              <td data-label="36개월 요금할인">514,800원</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="grid-2" style="margin-top:18px;">
-        <div class="card">
-          <h3>B tv 결합 시 실납부 예시</h3>
-          <p class="card-sub">월 실납부 · 미결합 → <span class="on">모바일 결합</span></p>
-          <div class="tv-block">
-            <p class="tv-title">인터넷 + B tv 스탠다드 <span>(234CH)</span></p>
-            <ul class="tv-list">
-                <li><span class="tv-speed">100M</span><span class="tv-off">28,600원</span><span class="tv-arrow">→</span><span class="tv-on">24,200원</span></li>
-                <li><span class="tv-speed">500M</span><span class="tv-off">33,000원</span><span class="tv-arrow">→</span><span class="tv-on">26,400원</span></li>
-                <li><span class="tv-speed">1G</span><span class="tv-off">37,400원</span><span class="tv-arrow">→</span><span class="tv-on">28,600원</span></li>
-            </ul>
+      <div class="rate-cards">
+        <article class="rate-card is-main">
+          <span class="rate-badge">B tv 결합 · 대표 상품</span>
+          <div class="rate-head">
+            <h3>500M 기가라이트<span class="rate-plus">+</span>B tv 스탠다드</h3>
+            <p>234채널 · 인터넷 + TV · WiFi 포함</p>
           </div>
-          <div class="tv-block">
-            <p class="tv-title">인터넷 + B tv ALL <span>(254CH)</span></p>
-            <ul class="tv-list">
-                <li><span class="tv-speed">100M</span><span class="tv-off">31,900원</span><span class="tv-arrow">→</span><span class="tv-on">27,500원</span></li>
-                <li><span class="tv-speed">500M</span><span class="tv-off">36,400원</span><span class="tv-arrow">→</span><span class="tv-on">29,700원</span></li>
-                <li><span class="tv-speed">1G</span><span class="tv-off">40,700원</span><span class="tv-arrow">→</span><span class="tv-on">31,900원</span></li>
-            </ul>
+          <div class="rate-ladder">
+            <div class="ld-row">
+              <span class="ld-label">월 이용요금<small>미결합 기준</small></span>
+              <span class="ld-strike">46,200원</span>
+            </div>
+            <div class="ld-row">
+              <span class="ld-label">매월 할인<small>요금할인</small></span>
+              <span class="ld-val is-minus">-13,200원</span>
+            </div>
+            <div class="ld-row is-subtotal">
+              <span class="ld-label">미결합 실납부</span>
+              <span class="ld-val">33,000원</span>
+            </div>
+            <div class="ld-row is-mob">
+              <span class="ld-label">휴대폰 결합 할인<small>결합 시 기준요금 39,600원</small></span>
+              <span class="ld-val is-minus">-6,600원</span>
+            </div>
+            <div class="ld-total">
+              <div>
+                <span class="ld-total-label">휴대폰 결합 시 월 납부금액</span>
+                <span class="ld-total-note">36개월 약정 · 부가세 포함</span>
+              </div>
+              <span class="ld-total-val">26,400<small>원</small></span>
+            </div>
           </div>
+          <div class="rate-gift">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4.2 10.8h15.6V20a1 1 0 0 1-1 1H5.2a1 1 0 0 1-1-1v-9.2Z" stroke="#3617ce" stroke-width="1.7"/><path d="M3 7.2h18v3.6H3z" stroke="#3617ce" stroke-width="1.7"/><path d="M12 7.2V21" stroke="#3617ce" stroke-width="1.7"/><path d="M12 7.2S10.7 2.8 8.3 2.8a2.2 2.2 0 0 0 0 4.4H12Zm0 0s1.3-4.4 3.7-4.4a2.2 2.2 0 0 1 0 4.4H12Z" stroke="#3617ce" stroke-width="1.7"/></svg>
+            <span><strong>설치비 56,100원 면제</strong> · 36개월 요금할인 <strong>475,200원</strong></span>
+          </div>
+          <p class="rate-foot">SK 핸드폰 요금 3,500원 추가 할인(알뜰폰 제외) · 회선 수·결합 유형에 따라 달라질 수 있습니다.</p>
+          <div class="rate-actions">
+            <a href="tel:010-5845-2242" class="btn btn-secondary btn-sm">전화 상담</a>
+            <a href="https://open.kakao.com/o/g8aVBQkg" target="_blank" rel="noopener" class="btn btn-kakao btn-sm">카톡 상담</a>
+          </div>
+        </article>
+        <article class="rate-card">
+          <span class="rate-badge is-soft">인터넷 단독 · 대표 상품</span>
+          <div class="rate-head">
+            <h3>500M 기가라이트</h3>
+            <p>인터넷 단독 · TV 없이 인터넷만 · WiFi 포함</p>
+          </div>
+          <div class="rate-ladder">
+            <div class="ld-row">
+              <span class="ld-label">월 이용요금<small>미결합 기준</small></span>
+              <span class="ld-strike">34,100원</span>
+            </div>
+            <div class="ld-row">
+              <span class="ld-label">매월 할인<small>요금할인</small></span>
+              <span class="ld-val is-minus">-6,600원</span>
+            </div>
+            <div class="ld-row is-subtotal">
+              <span class="ld-label">미결합 실납부</span>
+              <span class="ld-val">27,500원</span>
+            </div>
+            <div class="ld-row is-mob">
+              <span class="ld-label">휴대폰 결합 할인<small>결합 시 기준요금 23,100원</small></span>
+              <span class="ld-val is-minus">-11,000원</span>
+            </div>
+            <div class="ld-total">
+              <div>
+                <span class="ld-total-label">휴대폰 결합 시 월 납부금액</span>
+                <span class="ld-total-note">36개월 약정 · 부가세 포함</span>
+              </div>
+              <span class="ld-total-val">16,500<small>원</small></span>
+            </div>
+          </div>
+          <div class="rate-gift">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4.2 10.8h15.6V20a1 1 0 0 1-1 1H5.2a1 1 0 0 1-1-1v-9.2Z" stroke="#3617ce" stroke-width="1.7"/><path d="M3 7.2h18v3.6H3z" stroke="#3617ce" stroke-width="1.7"/><path d="M12 7.2V21" stroke="#3617ce" stroke-width="1.7"/><path d="M12 7.2S10.7 2.8 8.3 2.8a2.2 2.2 0 0 0 0 4.4H12Zm0 0s1.3-4.4 3.7-4.4a2.2 2.2 0 0 1 0 4.4H12Z" stroke="#3617ce" stroke-width="1.7"/></svg>
+            <span><strong>설치비 36,300원 면제</strong> · 36개월 요금할인 <strong>237,600원</strong></span>
+          </div>
+          <p class="rate-foot">SK 핸드폰 요금 3,500원 추가 할인(알뜰폰 제외) · 회선 수·결합 유형에 따라 달라질 수 있습니다.</p>
+          <div class="rate-actions">
+            <a href="tel:010-5845-2242" class="btn btn-secondary btn-sm">전화 상담</a>
+            <a href="https://open.kakao.com/o/g8aVBQkg" target="_blank" rel="noopener" class="btn btn-kakao btn-sm">카톡 상담</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="rate-board">
+        <div class="rate-board-head">
+          <h3>전체 요금안내표</h3>
+          <span>(36개월 약정 · 부가세 포함, 단위 : 원)</span>
         </div>
-        <div class="card">
-          <h3>모바일 결합 · 유심 변경 안내</h3>
-          <ul class="info-list">
-            <li><strong>SK 핸드폰 결합:</strong> 결합한 SKT 휴대폰 요금에서 <span class="num-red">매월 3,500원</span> 추가 할인 (알뜰폰 제외)</li>
-            <li><strong>SKT 알뜰폰 결합 가능:</strong> SK세븐모바일 · 리브모바일 · 이야기모바일 · 아이즈모바일 · 토스모바일 · 모빙 · 티플러스 · 스마텔</li>
-            <li><strong>인터넷 요금:</strong> 결합 시 위 요금표의 ‘모바일 결합 실납부’ 금액이 적용됩니다.</li>
-            <li><strong>유심 변경:</strong> 요금제에 따라 <span class="num-red">최대 30만 원</span> 현금 지원 (정확한 지원 금액은 상담 시 요금제별로 안내)</li>
-          </ul>
+        <div class="bw-wrap">
+          <table class="bw-table">
+            <thead>
+              <tr>
+                <th scope="col">상품 구성</th>
+                <th scope="col">기준 월요금</th>
+                <th scope="col">매월 할인<span>요금할인</span></th>
+                <th scope="col">미결합 실납부</th>
+                <th scope="col">휴대폰 결합 할인</th>
+                <th scope="col">결합 실납부</th>
+                <th scope="col">36개월 혜택<span>설치비 포함 총액</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="plan-row">
+                <th colspan="7" scope="colgroup"><span class="plan-name">100M<em>광랜</em></span><span class="plan-note">설치비 36,300원 면제 · B tv 결합 시 56,100원 면제</span></th>
+              </tr>
+              <tr>
+                <td class="c-name"><strong>인터넷 단독</strong></td>
+                <td data-label="기준 월요금">23,100</td>
+                <td class="c-disc" data-label="매월 할인(요금할인)">-3,850</td>
+                <td data-label="미결합 실납부">19,250</td>
+                <td class="c-mob" data-label="휴대폰 결합 할인">-4,400</td>
+                <td class="c-final" data-label="결합 실납부">14,850</td>
+                <td class="c-benefit" data-label="36개월 혜택">138,600<span>총 174,900원</span></td>
+              </tr>
+              <tr>
+                <td class="c-name"><strong>인터넷 + B tv 스탠다드</strong><span class="c-ch">234CH</span></td>
+                <td data-label="기준 월요금">39,600</td>
+                <td class="c-disc" data-label="매월 할인(요금할인)">-11,000</td>
+                <td data-label="미결합 실납부">28,600</td>
+                <td class="c-mob" data-label="휴대폰 결합 할인">-4,400</td>
+                <td class="c-final" data-label="결합 실납부">24,200</td>
+                <td class="c-benefit" data-label="36개월 혜택">396,000<span>총 452,100원</span></td>
+              </tr>
+              <tr>
+                <td class="c-name"><strong>인터넷 + B tv ALL</strong><span class="c-ch">254CH</span></td>
+                <td data-label="기준 월요금">42,900</td>
+                <td class="c-disc" data-label="매월 할인(요금할인)">-11,000</td>
+                <td data-label="미결합 실납부">31,900</td>
+                <td class="c-mob" data-label="휴대폰 결합 할인">-4,400</td>
+                <td class="c-final" data-label="결합 실납부">27,500</td>
+                <td class="c-benefit" data-label="36개월 혜택">396,000<span>총 452,100원</span></td>
+              </tr>
+              <tr class="plan-row">
+                <th colspan="7" scope="colgroup"><span class="plan-name">500M<em>기가라이트</em></span><span class="plan-note">설치비 36,300원 면제 · B tv 결합 시 56,100원 면제</span></th>
+              </tr>
+              <tr>
+                <td class="c-name"><strong>인터넷 단독</strong></td>
+                <td data-label="기준 월요금">34,100</td>
+                <td class="c-disc" data-label="매월 할인(요금할인)">-6,600</td>
+                <td data-label="미결합 실납부">27,500</td>
+                <td class="c-mob" data-label="휴대폰 결합 할인">-11,000</td>
+                <td class="c-final" data-label="결합 실납부">16,500</td>
+                <td class="c-benefit" data-label="36개월 혜택">237,600<span>총 273,900원</span></td>
+              </tr>
+              <tr class="is-main-row">
+                <td class="c-name"><strong>인터넷 + B tv 스탠다드</strong><span class="c-tag">대표</span><span class="c-ch">234CH</span></td>
+                <td data-label="기준 월요금">46,200</td>
+                <td class="c-disc" data-label="매월 할인(요금할인)">-13,200</td>
+                <td data-label="미결합 실납부">33,000</td>
+                <td class="c-mob" data-label="휴대폰 결합 할인">-6,600</td>
+                <td class="c-final" data-label="결합 실납부">26,400</td>
+                <td class="c-benefit" data-label="36개월 혜택">475,200<span>총 531,300원</span></td>
+              </tr>
+              <tr>
+                <td class="c-name"><strong>인터넷 + B tv ALL</strong><span class="c-ch">254CH</span></td>
+                <td data-label="기준 월요금">49,600</td>
+                <td class="c-disc" data-label="매월 할인(요금할인)">-13,200</td>
+                <td data-label="미결합 실납부">36,400</td>
+                <td class="c-mob" data-label="휴대폰 결합 할인">-6,700</td>
+                <td class="c-final" data-label="결합 실납부">29,700</td>
+                <td class="c-benefit" data-label="36개월 혜택">475,200<span>총 531,300원</span></td>
+              </tr>
+              <tr class="plan-row">
+                <th colspan="7" scope="colgroup"><span class="plan-name">1G<em>기가</em></span><span class="plan-note">설치비 36,300원 면제 · B tv 결합 시 56,100원 면제</span></th>
+              </tr>
+              <tr>
+                <td class="c-name"><strong>인터넷 단독</strong></td>
+                <td data-label="기준 월요금">39,600</td>
+                <td class="c-disc" data-label="매월 할인(요금할인)">-7,150</td>
+                <td data-label="미결합 실납부">32,450</td>
+                <td class="c-mob" data-label="휴대폰 결합 할인">-13,200</td>
+                <td class="c-final" data-label="결합 실납부">19,250</td>
+                <td class="c-benefit" data-label="36개월 혜택">257,400<span>총 293,700원</span></td>
+              </tr>
+              <tr>
+                <td class="c-name"><strong>인터넷 + B tv 스탠다드</strong><span class="c-ch">234CH</span></td>
+                <td data-label="기준 월요금">51,700</td>
+                <td class="c-disc" data-label="매월 할인(요금할인)">-14,300</td>
+                <td data-label="미결합 실납부">37,400</td>
+                <td class="c-mob" data-label="휴대폰 결합 할인">-8,800</td>
+                <td class="c-final" data-label="결합 실납부">28,600</td>
+                <td class="c-benefit" data-label="36개월 혜택">514,800<span>총 570,900원</span></td>
+              </tr>
+              <tr>
+                <td class="c-name"><strong>인터넷 + B tv ALL</strong><span class="c-ch">254CH</span></td>
+                <td data-label="기준 월요금">55,000</td>
+                <td class="c-disc" data-label="매월 할인(요금할인)">-14,300</td>
+                <td data-label="미결합 실납부">40,700</td>
+                <td class="c-mob" data-label="휴대폰 결합 할인">-8,800</td>
+                <td class="c-final" data-label="결합 실납부">31,900</td>
+                <td class="c-benefit" data-label="36개월 혜택">514,800<span>총 570,900원</span></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+      </div>
+
+      <div class="rate-info">
+        <h3>휴대폰 결합 · 유심 변경 안내</h3>
+        <ul class="info-list">
+          <li><strong>SK 핸드폰 결합:</strong> 결합한 SKT 휴대폰 요금에서 <span class="num-red">매월 3,500원</span> 추가 할인 (알뜰폰 제외)</li>
+          <li><strong>SKT 알뜰폰 결합 가능:</strong> SK세븐모바일 · 리브모바일 · 이야기모바일 · 아이즈모바일 · 토스모바일 · 모빙 · 티플러스 · 스마텔</li>
+          <li><strong>계산 순서:</strong> 기준 월요금 − 매월 할인 = 미결합 실납부, 여기서 휴대폰 결합 할인을 빼면 결합 실납부입니다.</li>
+          <li><strong>유심 변경:</strong> 요금제에 따라 <span class="num-red">최대 30만 원</span> 현금 지원 (정확한 지원 금액은 상담 시 요금제별로 안내)</li>
+        </ul>
       </div>
 
       <p class="notice">
-        ※ 36개월 약정·부가세 포함 기준이며, 모바일 결합 할인은 SKT 휴대폰 결합(일부 알뜰폰 포함) 기준입니다. 회선 수·결합 유형·프로모션 시점·설치 주소의 회선 여건에 따라 실제 청구 금액은 달라질 수 있습니다.
+        ※ 36개월 약정·부가세 포함 기준입니다. 36개월 요금할인은 매월 할인 × 36개월, ‘36개월 혜택’의 총액은 여기에 설치비 면제액을 더한 금액입니다. 휴대폰 결합 할인은 SKT 휴대폰 1회선 결합 기준이며, 회선 수·결합 유형·프로모션 시점·설치 주소의 회선 여건에 따라 실제 청구 금액은 달라질 수 있습니다.
       </p>
     </div>
   </section>
