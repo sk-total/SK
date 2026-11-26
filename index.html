@@ -8,8 +8,55 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
-  <title>SK토탈3종 솔루션 | 인터넷 · 렌탈 · 보안 한 번에 상담</title>
-  <meta name="description" content="SK브로드밴드 인터넷·B tv, SK매직 렌탈, ADT캡스 홈·매장 보안까지 한 번에 비교하고 상담하세요. SK브로드밴드 수도권1담당 고양북부지점 전봉근 팀장." />
+  <title>SK인터넷 요금 비교 · SK매직 렌탈 · ADT캡스 | SK토탈3종 솔루션</title>
+  <meta name="description" content="SK브로드밴드 인터넷(100M·500M·1G)·B tv, SK매직 렌탈, ADT캡스 보안을 한 번에 비교하고 상담하세요. 36개월 약정·부가세 포함 요금표와 속도별 선택 가이드, 온라인 상담 예약까지. 담당 전봉근 팀장 010-5845-2242." />
+  <meta name="keywords" content="SK인터넷, SK브로드밴드, 500M 기가라이트, 1G 기가인터넷, B tv, SK매직 렌탈, ADT캡스, 인터넷 결합 할인, 인터넷 요금 비교, 전봉근 팀장" />
+  <meta name="robots" content="index,follow" />
+  <meta name="author" content="전봉근 (SK브로드밴드 수도권1담당 고양북부지점)" />
+  <link rel="canonical" href="https://sk-total.github.io/SK/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SK토탈3종 솔루션" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:title" content="SK인터넷 요금 비교 · SK매직 렌탈 · ADT캡스 | SK토탈3종 솔루션" />
+  <meta property="og:description" content="SK인터넷 100M·500M·1G 요금표와 속도별 선택 가이드, SK매직 렌탈·ADT캡스까지. 36개월 약정·부가세 포함 기준으로 한 번에 비교하고 상담 예약하세요." />
+  <meta property="og:url" content="https://sk-total.github.io/SK/" />
+  <meta property="og:image" content="https://sk-total.github.io/SK/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="SK토탈3종 솔루션 — SK인터넷·B tv, SK매직 렌탈, ADT캡스 상담 안내" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SK인터넷 요금 비교 · SK매직 렌탈 · ADT캡스 | SK토탈3종 솔루션" />
+  <meta name="twitter:description" content="SK인터넷 100M·500M·1G 요금표와 속도별 선택 가이드, SK매직 렌탈·ADT캡스까지 한 번에 비교하고 상담 예약하세요." />
+  <meta name="twitter:image" content="https://sk-total.github.io/SK/og.png" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "SK토탈3종 솔루션",
+      "alternateName": "SK브로드밴드 수도권1담당 고양북부지점",
+      "description": "SK브로드밴드 인터넷·B tv, SK매직 렌탈, ADT캡스 홈·매장 보안을 한 번에 상담하는 통합 안내 페이지입니다.",
+      "url": "https://sk-total.github.io/SK/",
+      "image": "https://sk-total.github.io/SK/og.png",
+      "telephone": "+82-10-5845-2242",
+      "priceRange": "월 14,850원~",
+      "currenciesAccepted": "KRW",
+      "areaServed": { "@type": "Country", "name": "대한민국" },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "KR",
+        "addressRegion": "경기도",
+        "addressLocality": "고양시"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "parentOrganization": { "@type": "Organization", "name": "SK브로드밴드" },
+      "employee": { "@type": "Person", "name": "전봉근", "jobTitle": "팀장" }
+    }
+  </script>
   <style>
     /* ============================================================
        SK토탈3종 솔루션 — SK브로드밴드 공식 홈페이지(bworld.co.kr) 톤
@@ -2382,6 +2429,308 @@
         margin: 2px 0 0 0;
       }
     }
+
+    /* ---------- 가입 전 가이드 (속도 선택 · 체크리스트 · 필수 안내) ---------- */
+    #guide {
+      background: var(--bg);
+    }
+
+    .gd-speed {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .gd-speed-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      background: var(--surface);
+      border: 1px solid #e9eaf1;
+      border-radius: var(--radius);
+      padding: 24px 24px 22px;
+      transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .gd-speed-card:hover {
+      box-shadow: 0 16px 40px rgba(24, 16, 86, 0.07);
+      border-color: #ddd9f5;
+      transform: translateY(-2px);
+    }
+
+    .gd-speed-card.is-main {
+      border-color: #c9bcff;
+      background: linear-gradient(180deg, #fbf9ff 0%, #ffffff 64%);
+      box-shadow: 0 14px 36px rgba(54, 23, 206, 0.1);
+    }
+
+    .gd-speed-badge {
+      align-self: flex-start;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: #3a22b8;
+      background: var(--accent-soft);
+      border-radius: 999px;
+      padding: 4px 10px;
+    }
+
+    .gd-speed-card.is-main .gd-speed-badge {
+      color: #fff;
+      background: var(--primary);
+    }
+
+    .gd-speed-head h3 {
+      font-size: 1.32rem;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.2;
+    }
+
+    .gd-speed-head h3 span {
+      font-size: 0.86rem;
+      font-weight: 800;
+      color: #6a5fd0;
+      letter-spacing: -0.01em;
+      margin-left: 4px;
+    }
+
+    .gd-speed-head p {
+      margin-top: 6px;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: #5c606c;
+    }
+
+    .gd-speed-who {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      list-style: none;
+    }
+
+    .gd-speed-who li {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: #4a4d5c;
+      background: #f3f2fa;
+      border-radius: 999px;
+      padding: 4px 9px;
+    }
+
+    .gd-speed-fit {
+      font-size: 0.87rem;
+      line-height: 1.66;
+      color: #4d4a5f;
+    }
+
+    .gd-speed-fit b {
+      color: #2a10a8;
+      font-weight: 800;
+    }
+
+    .gd-speed-price {
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px dashed #e2e0f0;
+    }
+
+    .gd-speed-price > span {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #7c828f;
+      margin-bottom: 6px;
+    }
+
+    .gd-price-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .gd-price-row em {
+      font-style: normal;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: #4a4d5c;
+    }
+
+    .gd-price-row strong {
+      font-size: 1.24rem;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+
+    .gd-price-row strong small {
+      font-size: 0.82rem;
+      font-weight: 800;
+      margin-left: 2px;
+    }
+
+    .gd-price-row b {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: #2a10a8;
+    }
+
+    .gd-block { margin-top: 52px; }
+
+    .gd-block-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 8px 20px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .gd-block-head h3 {
+      font-size: 1.18rem;
+      font-weight: 900;
+      letter-spacing: -0.035em;
+    }
+
+    .gd-block-head h3 span { color: var(--primary); }
+
+    .gd-block-head p {
+      font-size: 0.86rem;
+      color: #6b6f7a;
+    }
+
+    .gd-checks {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .gd-check {
+      background: var(--surface);
+      border: 1px solid #e9eaf1;
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .gd-check-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 9px;
+      background: var(--accent-soft);
+      color: var(--primary);
+      font-size: 0.76rem;
+      font-weight: 900;
+    }
+
+    .gd-check h4 {
+      margin: 10px 0 8px;
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.35;
+    }
+
+    .gd-check p {
+      font-size: 0.87rem;
+      line-height: 1.66;
+      color: #5c606c;
+    }
+
+    .gd-check p strong {
+      color: #2a10a8;
+      font-weight: 800;
+    }
+
+    #guide details ul {
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    #guide details ul li {
+      position: relative;
+      padding-left: 13px;
+      font-size: 0.9rem;
+      line-height: 1.68;
+      color: #5c606c;
+    }
+
+    #guide details ul li + li { margin-top: 5px; }
+
+    #guide details ul li::before {
+      content: "";
+      position: absolute;
+      left: 1px;
+      top: 0.66em;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #b6a9ff;
+    }
+
+    #guide details ul li strong {
+      color: #2a10a8;
+      font-weight: 800;
+    }
+
+    .gd-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px 20px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+      padding: 20px 22px;
+      border: 1px solid #e2dcff;
+      border-radius: 18px;
+      background: linear-gradient(120deg, #f7f4ff 0%, #f2f0fd 100%);
+    }
+
+    .gd-cta strong {
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    .gd-cta p {
+      margin-top: 4px;
+      font-size: 0.86rem;
+      line-height: 1.6;
+      color: #5c606c;
+    }
+
+    .gd-cta-btns {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    /* 가입가이드 메뉴가 늘어난 만큼 좁은 PC 화면의 헤더 폭을 확보 */
+    @media (max-width: 1180px) {
+      .nav-wrap { gap: 14px; }
+      .nav-links { gap: 15px; font-size: 0.89rem; }
+      .nav-actions .nav-tel { display: none; }
+    }
+
+    @media (max-width: 900px) {
+      .gd-speed,
+      .gd-checks { grid-template-columns: 1fr; }
+      .gd-block { margin-top: 40px; }
+    }
+
+    @media (max-width: 600px) {
+      .gd-speed-card { padding: 20px 18px; }
+      .gd-check { padding: 20px 18px; }
+      .gd-cta { padding: 18px 16px; }
+      .gd-cta-btns { width: 100%; }
+      .gd-cta-btns .btn { flex: 1 1 100%; }
+      .gd-price-row strong { font-size: 1.16rem; }
+    }
 </style>
 </head>
 <body>
@@ -2403,6 +2752,7 @@
         <a href="#packages">추천패키지</a>
         <a href="#consulting">상담예약</a>
         <a href="#faq">FAQ</a>
+        <a href="#guide">가입가이드</a>
       </nav>
       <div class="nav-actions">
         <a href="tel:010-5845-2242" class="btn btn-outline btn-sm nav-tel">010-5845-2242</a>
@@ -3248,7 +3598,163 @@
     </div>
   </section>
 
-  <!-- 9. 상담 문의 -->
+  <!-- 9. 가입 전 가이드 (속도 선택 · 체크리스트 · 필수 안내) -->
+  <section id="guide">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-kicker">가입 전 가이드</span>
+        <h2 class="section-title">우리 집에 맞는 <span class="mark">속도</span>와 조건, 3분이면 정리됩니다</h2>
+        <p class="section-desc">
+          SK인터넷 100M·500M·1G 중 무엇을 골라야 할지, 상담 전에 무엇을 확인해야 할지 한눈에 보도록 정리했습니다. 아래 금액은 모두 <strong>36개월 약정 · 부가세 포함 · SKT 휴대폰 1회선 결합 기준</strong>입니다.
+        </p>
+      </div>
+
+      <div class="gd-speed">
+        <article class="gd-speed-card">
+          <span class="gd-speed-badge">실속형</span>
+          <div class="gd-speed-head">
+            <h3>100M <span>광랜</span></h3>
+            <p>웹서핑 · 유튜브 · OTT를 한두 기기로 즐기는 집</p>
+          </div>
+          <ul class="gd-speed-who">
+            <li>1~2인 가구</li>
+            <li>OTT 위주</li>
+            <li>요금 최소화</li>
+          </ul>
+          <p class="gd-speed-fit">영상 한두 개를 동시에 봐도 끊김 없이 쓰는 속도입니다. 인터넷 요금을 가장 낮추고 싶은 1~2인 가구에게 맞습니다.</p>
+          <div class="gd-speed-price">
+            <span>휴대폰 1회선 결합 기준</span>
+            <div class="gd-price-row"><em>인터넷 단독</em><strong>14,850<small>원</small></strong></div>
+            <div class="gd-price-row"><em>+ B tv 스탠다드</em><b>24,200원</b></div>
+          </div>
+        </article>
+
+        <article class="gd-speed-card is-main">
+          <span class="gd-speed-badge">가족 · 대표</span>
+          <div class="gd-speed-head">
+            <h3>500M <span>기가라이트</span></h3>
+            <p>가족이 각자 다른 기기로 쓰고, 재택근무까지 하는 집</p>
+          </div>
+          <ul class="gd-speed-who">
+            <li>가족 단위</li>
+            <li>재택근무</li>
+            <li>B tv 결합</li>
+            <li>다기기 동시 사용</li>
+          </ul>
+          <p class="gd-speed-fit">여러 기기가 동시에 영상·게임·화상회의를 해도 여유가 있습니다. <b>B tv 결합 요금이 가장 균형</b> 잡혀 있어 가족 가구에 가장 많이 안내하는 상품입니다.</p>
+          <div class="gd-speed-price">
+            <span>휴대폰 1회선 결합 기준</span>
+            <div class="gd-price-row"><em>인터넷 단독</em><strong>16,500<small>원</small></strong></div>
+            <div class="gd-price-row"><em>+ B tv 스탠다드</em><b>26,400원</b></div>
+          </div>
+        </article>
+
+        <article class="gd-speed-card">
+          <span class="gd-speed-badge">고속형</span>
+          <div class="gd-speed-head">
+            <h3>1G <span>기가</span></h3>
+            <p>대용량 다운로드 · 온라인 게임 · 업무용으로 쓰는 집</p>
+          </div>
+          <ul class="gd-speed-who">
+            <li>대용량 다운로드</li>
+            <li>온라인 게임</li>
+            <li>다수 기기</li>
+            <li>업무용</li>
+          </ul>
+          <p class="gd-speed-fit">큰 파일을 자주 주고받거나 게임 지연에 민감하다면 1G가 낫습니다. <b>500M과는 월 2,000~3,000원 차이</b>라, 쓰는 패턴을 보고 정하시면 됩니다.</p>
+          <div class="gd-speed-price">
+            <span>휴대폰 1회선 결합 기준</span>
+            <div class="gd-price-row"><em>인터넷 단독</em><strong>19,250<small>원</small></strong></div>
+            <div class="gd-price-row"><em>+ B tv 스탠다드</em><b>28,600원</b></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="gd-block">
+        <div class="gd-block-head">
+          <h3>상담 전 <span>3가지</span>만 확인하세요</h3>
+          <p>이 세 가지만 정리해 두면 상담 한 번으로 정확한 견적이 나옵니다.</p>
+        </div>
+        <div class="gd-checks">
+          <div class="gd-check">
+            <span class="gd-check-num">01</span>
+            <h4>현재 통신사 · 약정 만료일</h4>
+            <p>인터넷 약정이 남아 있으면 해지 위약금이 생길 수 있습니다. <strong>약정 만료일과 위약금</strong>을 미리 확인하면 전환 시점을 정확히 잡을 수 있고, 휴대폰 위약금·남은 할부금도 함께 확인해 두시면 좋습니다.</p>
+          </div>
+          <div class="gd-check">
+            <span class="gd-check-num">02</span>
+            <h4>결합할 SKT 회선 수 · 명의</h4>
+            <p>결합 할인은 <strong>SKT 휴대폰 회선 수</strong>에 따라 달라집니다. SKT 알뜰폰(세븐모바일 · 리브모바일 · 이야기모바일 · 아이즈모바일 · 토스모바일 · 모빙 · 티플러스 · 스마텔)도 결합할 수 있고, 명의가 다르면 가족관계 확인이 필요할 수 있습니다.</p>
+          </div>
+          <div class="gd-check">
+            <span class="gd-check-num">03</span>
+            <h4>B tv 채널 등급 · 추가 렌탈 · 보안</h4>
+            <p>B tv는 <strong>스탠다드 234채널 / ALL 254채널</strong> 중에서 고르고, SK매직 렌탈(정수기 · 공기청정기 · 비데)과 ADT캡스 보안을 함께할지도 정하면 상담 한 번으로 3종 견적이 정리됩니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gd-block">
+        <div class="gd-block-head">
+          <h3>가입 · 설치 전 <span>필수 안내</span></h3>
+          <p>상담에서 가장 많이 나오는 질문 5가지입니다. 눌러서 확인하세요.</p>
+        </div>
+        <details>
+          <summary>Q. 요금표의 ‘결합 실납부’는 어떤 조건의 금액인가요?</summary>
+          <ul>
+            <li>기준 월요금에서 <strong>매월 할인(요금할인)</strong>을 빼면 미결합 실납부, 여기서 <strong>휴대폰 결합 할인</strong>을 한 번 더 빼면 결합 실납부입니다.</li>
+            <li>휴대폰 결합 할인은 <strong>SKT 휴대폰 1회선</strong> 기준이고, 회선을 추가하면 할인 폭이 커집니다.</li>
+            <li>회선 수 · 결합 유형 · 설치 주소의 회선 여건 · 가입 시점 프로모션에 따라 실제 청구 금액은 달라질 수 있습니다.</li>
+          </ul>
+        </details>
+        <details>
+          <summary>Q. 약정 기간과 요금 기준은 어떻게 되나요?</summary>
+          <ul>
+            <li>본 페이지 요금은 <strong>3년(36개월) 약정 · 부가세 포함</strong> 기준입니다.</li>
+            <li>36개월 요금할인 총액과 설치비 면제액은 요금표의 ‘36개월 혜택’에 표시되어 있습니다.</li>
+            <li><strong>5년 약정</strong> 등 다른 약정 조건은 상품과 시점에 따라 선택할 수 있고, 기간이 길수록 월 요금·할인 조건이 달라지므로 상담 시 확정해 드립니다.</li>
+          </ul>
+        </details>
+        <details>
+          <summary>Q. 설치비 · 출동비는 얼마인가요?</summary>
+          <ul>
+            <li>인터넷 설치비 <strong>36,300원(인터넷 단독) · 56,100원(B tv 결합)은 모두 면제</strong>됩니다.</li>
+            <li>ADT캡스는 <strong>출동비 무료</strong>로 안내합니다.</li>
+            <li>설치 환경에 따라 추가 배선·공사가 필요한 경우에는 작업 전에 비용을 먼저 안내해 드립니다.</li>
+          </ul>
+        </details>
+        <details>
+          <summary>Q. 기존 통신사는 언제, 어떻게 해지하나요?</summary>
+          <ul>
+            <li>인터넷은 <strong>새 회선 개통 후 기존 통신사에 직접 해지 요청</strong>을 하셔야 합니다. 번호이동처럼 자동으로 해지되지 않습니다.</li>
+            <li>설치·개통을 확인한 뒤 해지하면 인터넷 공백 없이 사용할 수 있습니다.</li>
+            <li>휴대폰 번호이동은 개통과 동시에 기존 회선이 해지되므로, 위약금·남은 할부금은 기존 통신사에서 먼저 확인하세요.</li>
+          </ul>
+        </details>
+        <details>
+          <summary>Q. 제휴카드 할인과 사은품은 왜 상담할 때마다 다른가요?</summary>
+          <ul>
+            <li>제휴카드(B롯데 · 하나 · 삼성 등)로 자동이체하면 전월 실적에 따라 <strong>월 7,000원 ~ 최대 20,000원</strong>이 결제일에 추가 할인됩니다. 카드사·실적별로 할인액이 다르고, 위 요금표는 카드 할인 적용 전 금액입니다.</li>
+            <li>사은품은 <strong>가입 시점 프로모션과 상품 구성</strong>에 따라 달라집니다. 상담하시는 시점의 조건으로 정확히 안내해 드립니다.</li>
+          </ul>
+        </details>
+      </div>
+
+      <div class="gd-cta">
+        <div>
+          <strong>여기까지 정리됐다면, 남은 건 조건 확인뿐입니다</strong>
+          <p>설치 지역(가정/매장)과 현재 휴대폰 통신사만 알려주시면 맞춤 견적을 바로 안내해 드립니다.</p>
+        </div>
+        <div class="gd-cta-btns">
+          <a href="#consulting" class="btn btn-primary btn-sm">상담 예약하기</a>
+          <a href="tel:010-5845-2242" class="btn btn-secondary btn-sm">전화 010-5845-2242</a>
+          <a href="https://open.kakao.com/o/g8aVBQkg" target="_blank" rel="noopener" class="btn btn-kakao btn-sm">카톡 상담</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. 상담 문의 -->
   <section id="contact">
     <div class="container">
       <div class="contact-box">
