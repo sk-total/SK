@@ -2299,25 +2299,33 @@
       font-size: 0.83rem;
       font-weight: 800;
       color: var(--primary);
-      text-decoration: none;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1.5px;
       white-space: nowrap;
-      border-bottom: 1px solid currentColor;
-      padding-bottom: 2px;
     }
 
     @media (max-width: 600px) {
       .gift-panel {
         flex-wrap: wrap;
-        gap: 12px;
+        gap: 10px 12px;
         padding: 18px 16px;
       }
 
+      .gift-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 11px;
+      }
+
+      .gift-body { flex: 1 1 0; }
       .gift-body h3 { font-size: 1rem; }
       .gift-body p { font-size: 0.85rem; }
 
       .gift-cta {
-        margin-left: 54px;
+        flex: 1 1 100%;
         align-self: flex-start;
+        margin: 2px 0 0 0;
       }
     }
 </style>
