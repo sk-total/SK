@@ -2886,13 +2886,16 @@
           '_honey': form.querySelector('input[name="_honey"]').value
         };
 
+        var body = new URLSearchParams();
+        Object.keys(payload).forEach(function (key) { body.append(key, payload[key]); });
+
         submitBtn.disabled = true;
         submitBtn.textContent = '접수 중...';
 
         fetch('https://formsubmit.co/ajax/bongkoreabk2@gmail.com', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify(payload)
+          headers: { 'Accept': 'application/json' },
+          body: body
         })
           .then(function (res) {
             return res.json().catch(function () { return {}; }).then(function (data) {
