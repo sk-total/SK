@@ -719,6 +719,228 @@
       padding: 24px 28px;
     }
 
+    /* ---------- Franchise 제휴 영업 ---------- */
+    #franchise {
+      padding: 0 0 92px;
+      background: var(--surface);
+    }
+
+    .fran-panel {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(620px 300px at 94% -8%, rgba(54, 23, 206, 0.1) 0%, rgba(54, 23, 206, 0) 62%),
+        linear-gradient(150deg, #f8f7ff 0%, #eff1ff 52%, #f5f2ff 100%);
+      border: 1px solid #e2defb;
+      border-radius: 28px;
+      padding: 44px 46px 40px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .fran-head {
+      max-width: 780px;
+      margin-bottom: 28px;
+    }
+
+    .fran-head .section-desc strong {
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .fran-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .fran-card {
+      background: #fff;
+      border: 1px solid #e7e5fa;
+      border-radius: 20px;
+      padding: 24px 24px 22px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .fran-num {
+      align-self: flex-start;
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: #3a22b8;
+      background: var(--accent-soft);
+      border-radius: 999px;
+      padding: 3px 10px;
+      margin-bottom: 12px;
+      letter-spacing: -0.005em;
+      white-space: nowrap;
+    }
+
+    .fran-card h3 {
+      font-size: 1.04rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+
+    .fran-list {
+      list-style: none;
+      display: grid;
+      gap: 9px;
+      font-size: 0.9rem;
+      color: #555a66;
+    }
+
+    .fran-list li {
+      position: relative;
+      padding-left: 15px;
+      line-height: 1.55;
+    }
+
+    .fran-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--primary);
+    }
+
+    .fran-list strong {
+      color: #24262f;
+      font-weight: 800;
+    }
+
+    .fran-card.is-point {
+      background:
+        radial-gradient(360px 220px at 100% 0%, rgba(130, 106, 255, 0.55) 0%, rgba(130, 106, 255, 0) 70%),
+        linear-gradient(140deg, #2a10a8 0%, #3617ce 62%, #4526dd 100%);
+      border-color: #3617ce;
+    }
+
+    .fran-card.is-point .fran-num {
+      background: rgba(255, 255, 255, 0.18);
+      color: #fff;
+    }
+
+    .fran-card.is-point h3 {
+      color: #fff;
+    }
+
+    .fran-card.is-point p {
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 0.88rem;
+    }
+
+    .fran-key {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1.5;
+      letter-spacing: -0.02em;
+      color: #fff;
+    }
+
+    .fran-key em {
+      font-style: normal;
+      color: #ffc4ca;
+    }
+
+    .fran-flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .fran-step {
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid #e5e2fb;
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+
+    .fran-step span {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #6a5ce0;
+      letter-spacing: 0.02em;
+      margin-bottom: 4px;
+    }
+
+    .fran-step strong {
+      display: block;
+      font-size: 0.92rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .fran-step p {
+      font-size: 0.81rem;
+      color: #62677a;
+      margin-top: 3px;
+      line-height: 1.5;
+    }
+
+    .fran-cta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-top: 22px;
+      padding-top: 22px;
+      border-top: 1px dashed #d9d4f6;
+    }
+
+    .fran-cta strong {
+      display: block;
+      font-size: 1.06rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 4px;
+    }
+
+    .fran-cta p {
+      font-size: 0.88rem;
+      color: #5c6070;
+      max-width: 600px;
+    }
+
+    .fran-cta .fran-contact {
+      margin-top: 6px;
+      font-size: 0.88rem;
+    }
+
+    .fran-cta .fran-contact a {
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .fran-cta-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    @media (max-width: 900px) {
+      #franchise { padding-bottom: 68px; }
+      .fran-grid { grid-template-columns: 1fr; }
+      .fran-flow { grid-template-columns: repeat(2, 1fr); }
+      .fran-panel { padding: 30px 24px 26px; border-radius: 22px; }
+    }
+
+    @media (max-width: 600px) {
+      .fran-flow { grid-template-columns: 1fr; }
+      .fran-cta-btns { width: 100%; }
+      .fran-cta-btns .btn { flex: 1 1 100%; }
+      .fran-card { padding: 22px; }
+    }
+
     .step-num {
       display: inline-block;
       font-size: 0.77rem;
@@ -2569,6 +2791,90 @@
           <p style="color:var(--muted);font-size:0.9rem;">지역 사업자와의 협업을 바탕으로 매장 통신·보안·부가 구성 할인 모델을 운영하고 있습니다.</p>
         </div>
         <a href="https://www.kukinews.com/article/view/kuk202611020177" target="_blank" rel="noopener" class="btn btn-outline btn-sm">기사 원문 보기</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6-1. 프랜차이즈 제휴 영업 -->
+  <section id="franchise">
+    <div class="container">
+      <div class="fran-panel">
+        <div class="section-head fran-head">
+          <span class="section-kicker">프랜차이즈 제휴 영업</span>
+          <h2 class="section-title">가맹본부 협약 한 번으로<br class="br-lg" /> 가맹점 통신비를 낮춥니다</h2>
+          <p class="section-desc">
+            카페 프랜차이즈 <strong>원스타임오프</strong> 업무협약(MOU) 사례처럼, 본사와 협약을 맺으면 가맹점·회원사가 같은 조건의 통신·렌탈·보안 혜택을 한 번에 받습니다. 가맹점별 조건 확인과 상담·설치·사후관리는 전담 팀장이 직접 맡습니다.
+          </p>
+        </div>
+
+        <div class="fran-grid">
+          <div class="fran-card">
+            <span class="fran-num">01 제휴 대상</span>
+            <h3>이런 곳과 함께합니다</h3>
+            <ul class="fran-list">
+              <li><strong>프랜차이즈 가맹본부</strong> — 가맹점 전체 통신비 절감</li>
+              <li><strong>무인매장 · 소상공인 브랜드</strong> — 매장 인터넷·CCTV·렌탈 구성</li>
+              <li><strong>다회선 · 입주 제휴처</strong> — 오피스·상가·기숙사·다가구</li>
+            </ul>
+          </div>
+
+          <div class="fran-card">
+            <span class="fran-num">02 제공 혜택</span>
+            <h3>3종을 한 번에 결합</h3>
+            <ul class="fran-list">
+              <li><strong>SK인터넷 · B tv</strong> — 가맹점 요금 매월 할인</li>
+              <li><strong>SK매직 렌탈</strong> — 정수기 4종 6개월 반값, 공기청정기·비데 선택 결합</li>
+              <li><strong>ADT캡스</strong> — 매장 CCTV·출동경비 결합, 출동비 무료</li>
+              <li><strong>가맹점·회원사 전용 특가</strong> — 월 고정비 절감</li>
+            </ul>
+          </div>
+
+          <div class="fran-card is-point">
+            <span class="fran-num">03 규모 · 건수 협의</span>
+            <h3>규모에 맞춘 상생 지원</h3>
+            <span class="fran-key">규모·건수 협의 시<br /><em>추가 플러스(+) 상생 지원</em> 별도 협의</span>
+            <p>신규 오픈 매장과 기존 매장 전환을 함께 담고, 지원 범위와 방식은 본사 협의로 확정합니다. 전담 팀장 1:1 관리로 가맹점 상담 청구도 한 곳입니다.</p>
+          </div>
+        </div>
+
+        <div class="fran-flow">
+          <div class="fran-step">
+            <span>STEP 01</span>
+            <strong>본사 제휴 협의</strong>
+            <p>대상 가맹점 범위와 혜택 기준 확정</p>
+          </div>
+          <div class="fran-step">
+            <span>STEP 02</span>
+            <strong>가맹점 안내</strong>
+            <p>본사 공지·안내문으로 혜택 전달</p>
+          </div>
+          <div class="fran-step">
+            <span>STEP 03</span>
+            <strong>개별 상담 · 견적</strong>
+            <p>매장별 이용 조건 확인 후 견적 제시</p>
+          </div>
+          <div class="fran-step">
+            <span>STEP 04</span>
+            <strong>개통 · 사후관리</strong>
+            <p>설치·통신 전환부터 지속 관리까지</p>
+          </div>
+        </div>
+
+        <div class="fran-cta">
+          <div>
+            <strong>본사 담당자와 15분 통화면 충분합니다</strong>
+            <p>가맹점 리스트 공유와 공지 채널 게시만 협조해 주시면, 가맹점별 상담·설치·지원 집행까지 전담 팀장이 처리합니다.</p>
+            <p class="fran-contact">전담 팀장 1:1 관리 · <a href="tel:010-5845-2242">전봉근 팀장 010-5845-2242</a></p>
+          </div>
+          <div class="fran-cta-btns">
+            <a href="#consulting" class="btn btn-primary">제휴 문의 바로가기</a>
+            <a href="https://open.kakao.com/o/g8aVBQkg" target="_blank" rel="noopener" class="btn btn-kakao">카카오톡 오픈채팅</a>
+          </div>
+        </div>
+
+        <p class="notice" style="margin-top:20px;">
+          ※ 제휴 조건과 지원 규모는 본사 협의, 가맹점 수, 결합 상품에 따라 달라지며 상세 조건은 별도 협의로 확정됩니다.
+        </p>
       </div>
     </div>
   </section>
