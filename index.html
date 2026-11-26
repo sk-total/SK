@@ -706,6 +706,60 @@
       margin-top: 3px;
     }
 
+    /* SK브로드밴드 X SK매직 제휴: 7개월차 구독료 전액 면제 (해당 2종만) */
+    .price-box .free-month {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed #d8d1ff;
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: var(--success-text);
+      line-height: 1.5;
+      letter-spacing: -0.02em;
+      word-break: keep-all;
+    }
+
+    .price-box .free-month em {
+      font-style: normal;
+      font-weight: 600;
+      color: #6b6f7a;
+      letter-spacing: -0.01em;
+    }
+
+    /* 제휴카드 자동이체 추가 할인 안내 */
+    .card-discount {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 14px;
+      border: 1px solid #e2daff;
+      background: #fbfaff;
+    }
+
+    .card-discount h3 {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    .card-discount h3::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--primary);
+      flex: none;
+    }
+
+    .card-discount p {
+      font-size: 0.86rem;
+      line-height: 1.62;
+      color: #5c606c;
+    }
+
     /* ---------- Press ---------- */
     .press-banner {
       display: flex;
@@ -2735,6 +2789,11 @@
         </ul>
       </div>
 
+      <div class="card-discount">
+        <h3>제휴카드 자동이체 추가 할인</h3>
+        <p><strong>B롯데 · 하나 · 삼성카드</strong> 등 SK브로드밴드 제휴카드로 자동이체하면 전월 실적에 따라 <span class="num-red">월 7,000원 ~ 최대 20,000원</span>이 결제일에 추가 할인됩니다. 카드사·전월 실적별로 할인액이 다르며, 위 요금표는 <strong>제휴카드 할인 적용 전 금액</strong>입니다.</p>
+      </div>
+
       <p class="notice">
         ※ 36개월 약정·부가세 포함 기준입니다. 36개월 요금할인은 매월 할인 × 36개월, ‘36개월 혜택’의 총액은 여기에 설치비 면제액을 더한 금액입니다. 휴대폰 결합 할인은 SKT 휴대폰 1회선 결합 기준이며, 회선 수·결합 유형·프로모션 시점·설치 주소의 회선 여건에 따라 실제 청구 금액은 달라질 수 있습니다.
       </p>
@@ -2791,6 +2850,7 @@
           <div class="price-box">
             <div class="main-price">1~6회차 월 22,450원</div>
             <div class="sub-price">이후 월 44,900원 · 60개월 총 2,559,300원</div>
+            <div class="free-month">SK인터넷 동시 가입 시 7개월차 구독료 전액 면제 <em>(방문관리형 기준)</em></div>
           </div>
         </article>
 
@@ -2821,6 +2881,7 @@
           <div class="price-box">
             <div class="main-price">1~6회차 월 17,700원</div>
             <div class="sub-price">이후 월 35,400원 · 60개월 총 2,017,800원</div>
+            <div class="free-month">SK인터넷 동시 가입 시 7개월차 구독료 전액 면제 <em>(방문관리형 기준)</em></div>
           </div>
         </article>
 
@@ -2853,6 +2914,11 @@
             <div class="sub-price">60개월 총 954,000원</div>
           </div>
         </article>
+      </div>
+
+      <div class="card-discount">
+        <h3>제휴카드 자동이체 추가 할인</h3>
+        <p><strong>우리 · 하나 · KB국민 · 롯데카드</strong> 등 SK매직 제휴카드로 자동이체하면 전월 실적(30만~120만 원)에 따라 <span class="num-red">월 11,000원 ~ 최대 23,000원</span>이 추가 청구할인됩니다. 카드사·전월 실적별로 할인액이 다르며, 위 카드에 표시된 렌탈 요금은 <strong>제휴카드 할인 적용 전 금액</strong>입니다.</p>
       </div>
 
       <p class="notice">
