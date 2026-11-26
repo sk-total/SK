@@ -2227,6 +2227,99 @@
 
       .info-list li { font-size: 0.86rem; }
     }
+
+    /* ---------- SK매직 사은품 안내 ---------- */
+    .gift-panel {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 26px;
+      padding: 20px 22px;
+      border-radius: var(--radius);
+      border: 1px solid #e2daff;
+      background: linear-gradient(180deg, #faf8ff 0%, #f4f1ff 100%);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .gift-icon {
+      flex: none;
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      background: #fff;
+      color: var(--primary);
+      box-shadow: inset 0 0 0 1px #e4ddff;
+    }
+
+    .gift-body { flex: 1 1 auto; min-width: 0; }
+
+    .gift-kicker {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: #5a3fd6;
+      letter-spacing: -0.005em;
+      margin-bottom: 5px;
+    }
+
+    .gift-body h3 {
+      font-size: 1.08rem;
+      font-weight: 800;
+      letter-spacing: -0.032em;
+      line-height: 1.42;
+      color: #1d1633;
+      margin-bottom: 6px;
+    }
+
+    .gift-body h3 strong {
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .gift-body p {
+      font-size: 0.88rem;
+      line-height: 1.64;
+      color: #4d4a5f;
+    }
+
+    .gift-body p strong { color: #2a10a8; font-weight: 800; }
+
+    .gift-body .gift-note {
+      margin-top: 8px;
+      font-size: 0.78rem;
+      line-height: 1.6;
+      color: #7d7a92;
+    }
+
+    .gift-cta {
+      flex: none;
+      align-self: center;
+      font-size: 0.83rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-decoration: none;
+      white-space: nowrap;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 2px;
+    }
+
+    @media (max-width: 600px) {
+      .gift-panel {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 18px 16px;
+      }
+
+      .gift-body h3 { font-size: 1rem; }
+      .gift-body p { font-size: 0.85rem; }
+
+      .gift-cta {
+        margin-left: 54px;
+        align-self: flex-start;
+      }
+    }
 </style>
 </head>
 <body>
@@ -2647,6 +2740,19 @@
         <span class="section-kicker">SK매직 인기 렌탈</span>
         <h2 class="section-title">지금 상담 가능한 SK매직 인기 렌탈 6종</h2>
         <p class="section-desc">정수기 4종은 <strong>1~6회차 반값</strong>이 적용되고, 공기청정기·비데는 반값 혜택 없이 60개월 균일 요금입니다. 전 모델 60개월 약정 · 부가세 포함 기준입니다.</p>
+      </div>
+
+      <div class="gift-panel">
+        <span class="gift-icon" aria-hidden="true">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M4.2 10.8h15.6V20a1 1 0 0 1-1 1H5.2a1 1 0 0 1-1-1v-9.2Z" stroke="currentColor" stroke-width="1.7"/><path d="M3 7.2h18v3.6H3z" stroke="currentColor" stroke-width="1.7"/><path d="M12 7.2V21" stroke="currentColor" stroke-width="1.7"/><path d="M12 7.2S10.7 2.8 8.3 2.8a2.2 2.2 0 0 0 0 4.4H12Zm0 0s1.3-4.4 3.7-4.4a2.2 2.2 0 0 1 0 4.4H12Z" stroke="currentColor" stroke-width="1.7"/></svg>
+        </span>
+        <div class="gift-body">
+          <span class="gift-kicker">SK매직 사은품 안내</span>
+          <h3>월 렌탈료 구간별 <strong>선택 사은품</strong> 별도 증정</h3>
+          <p>생활·주방가전, 캠핑용품 등 원하는 품목을 골라 받는 사은품이 렌탈료 구간에 따라 함께 제공됩니다. 품목은 시점·재고에 따라 바뀌므로 <strong>상담 시점의 최신 목록</strong>으로 안내해 드립니다.</p>
+          <p class="gift-note">정수기 4종 · 공기청정기 · 비데 모두 해당 · 카드에 표시된 A·B·C 등급별로 사은품 4종 중 1택 선택 (등급별 품목은 상담 시점 기준 안내)</p>
+        </div>
+        <a href="#consulting" class="gift-cta">사은품 목록 문의</a>
       </div>
 
       <div class="grid-6">
