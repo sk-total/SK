@@ -4513,13 +4513,15 @@
 
       function scrollToEl(el) {
         if (!el) return;
+        /* 진행 중인 smooth 스크롤을 먼저 끊어 목표 위치를 정확히 맞춘다 */
+        window.scrollTo({ top: window.pageYOffset, behavior: 'auto' });
         window.scrollTo({ top: targetTop(el), behavior: 'smooth' });
         window.setTimeout(function () {
           var want = targetTop(el);
           if (Math.abs(want - window.pageYOffset) > 6) {
             window.scrollTo({ top: want, behavior: 'auto' });
           }
-        }, 720);
+        }, 760);
       }
 
       function applyTab(cat) {
