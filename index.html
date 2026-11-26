@@ -3120,6 +3120,60 @@
       .check-tile { padding: 10px 12px; font-size: 0.86rem; }
     }
 
+    /* 필요 상품 5종(인터넷·TV·정수기·보안·제휴) 줄맞춤 */
+    .field label.check-tile {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.87rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 0;
+      color: #3c3f4a;
+    }
+    .field label.check-tile:has(input:checked) { color: var(--primary-dark); }
+    .check-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    .check-grid > .check-tile:nth-child(-n+3) { grid-column: span 2; }
+    .check-grid > .check-tile:nth-child(n+4) { grid-column: span 3; }
+
+    .press-banner-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      color: inherit;
+      text-decoration: none;
+      transition: border-color 0.16s ease, box-shadow 0.16s ease;
+    }
+    .press-banner-link:hover {
+      border-color: #cfc7f7;
+      box-shadow: 0 10px 26px rgba(54, 23, 206, 0.1);
+    }
+    .press-banner-link:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+    .press-text { display: block; flex: 1 1 320px; min-width: 0; }
+    .press-title { display: block; margin: 6px 0 4px; }
+    .press-sub { display: block; }
+    .press-more { flex: 0 0 auto; pointer-events: none; }
+    .press-banner-link:hover .press-more { border-color: var(--primary); color: var(--primary); }
+
+    .inline-press {
+      color: var(--primary);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .inline-press:hover { color: #2a10a6; }
+
+    @media (max-width: 900px) {
+      .check-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .check-grid > .check-tile:nth-child(-n+4) { grid-column: span 1; }
+      .check-grid > .check-tile:nth-child(5) { grid-column: span 2; }
+      .press-banner-link { padding: 20px; gap: 14px; }
+      .press-more { width: 100%; justify-content: center; }
+    }
+
 </style>
 </head>
 <body>
@@ -3232,7 +3286,7 @@
         </p>
 
         <div class="trust-bar">
-          <a class="trust-item is-link" href="https://www.kukinews.com/article/view/kuk202611020177" target="_blank" rel="noopener">
+          <a class="trust-item is-link" href="https://www.kukinews.com/article/view/kuk202611020177" target="_blank" rel="noopener noreferrer">
             <span class="ti-emoji">📰</span>
             <span class="ti-body">
               <strong>쿠키뉴스 보도</strong>
@@ -3999,26 +4053,27 @@
         </div>
       </div>
 
-      <div class="press-banner">
-        <div>
-          <span class="step-num">언론보도 · 쿠키뉴스 2026.11.02</span>
-          <h3 style="font-size:1.05rem;font-weight:800;">SK브로드밴드 고양북부지점, 통신비 절감 업무협약(MOU) 체결</h3>
-          <p style="color:var(--muted);font-size:0.9rem;">지역 사업자와의 협업을 바탕으로 매장 통신·보안·부가 구성 할인 모델을 운영하고 있습니다.</p>
-        </div>
-        <a href="https://www.kukinews.com/article/view/kuk202611020177" target="_blank" rel="noopener" class="btn btn-outline btn-sm">기사 원문 보기</a>
-      </div>
     </div>
   </section>
 
   <!-- 6-1. 프랜차이즈 제휴 영업 -->
   <section id="franchise" data-cats="franchise">
     <div class="container">
+      <a class="press-banner press-banner-link" href="https://www.kukinews.com/article/view/kuk202611020177" target="_blank" rel="noopener noreferrer"
+         aria-label="쿠키뉴스 보도: SK브로드밴드 고양북부지점, 원스타임오프 통신비 절감 업무협약(MOU) 체결 — 기사 원문 보기(새 창)">
+        <span class="press-text">
+          <span class="step-num">언론보도 · 쿠키뉴스 2026.11.02</span>
+          <h3 class="press-title" style="font-size:1.05rem;font-weight:800;">SK브로드밴드 고양북부지점, 원스타임오프와 통신비 절감 업무협약(MOU) 체결</h3>
+          <p class="press-sub" style="color:var(--muted);font-size:0.9rem;">카페 프랜차이즈 원스타임오프 가맹점 통신·보안 할인 모델 · 기사에서 자세히 확인하세요.</p>
+        </span>
+        <span class="btn btn-outline btn-sm press-more">기사 원문 보기</span>
+      </a>
       <div class="fran-panel">
         <div class="section-head fran-head">
           <span class="section-kicker">프랜차이즈 제휴 영업</span>
           <h2 class="section-title">가맹본부 협약 한 번으로<br class="br-lg" /> 가맹점 통신비를 낮춥니다</h2>
           <p class="section-desc">
-            카페 프랜차이즈 <strong>원스타임오프</strong> 업무협약(MOU) 사례처럼, 본사와 협약을 맺으면 가맹점·회원사가 같은 조건의 통신·렌탈·보안 혜택을 한 번에 받습니다. 가맹점별 조건 확인과 상담·설치·사후관리는 전담 팀장이 직접 맡습니다.
+            카페 프랜차이즈 <a class="inline-press" href="https://www.kukinews.com/article/view/kuk202611020177" target="_blank" rel="noopener noreferrer">원스타임오프 업무협약(MOU)</a> 사례처럼, 본사와 협약을 맺으면 가맹점·회원사가 같은 조건의 통신·렌탈·보안 혜택을 한 번에 받습니다. 가맹점별 조건 확인과 상담·설치·사후관리는 전담 팀장이 직접 맡습니다.
           </p>
         </div>
 
@@ -4250,6 +4305,7 @@
                 <label class="check-tile"><input type="checkbox" name="products" value="TV" /><span>TV</span></label>
                 <label class="check-tile"><input type="checkbox" name="products" value="정수기" /><span>정수기</span></label>
                 <label class="check-tile"><input type="checkbox" name="products" value="보안" /><span>보안</span></label>
+                <label class="check-tile"><input type="checkbox" name="products" value="제휴" /><span>제휴</span></label>
               </div>
             </div>
 
