@@ -50,6 +50,7 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 84px;
       -webkit-text-size-adjust: 100%;
     }
 
@@ -124,7 +125,7 @@
 
     .nav-links {
       display: flex;
-      gap: 26px;
+      gap: 20px;
       font-size: 0.93rem;
       color: #4c505b;
       font-weight: 600;
@@ -1338,6 +1339,427 @@
 
     .rate-info .info-list li + li { margin-top: 0; }
 
+    /* ---------- 상담 예약 (캡스홈 /consulting 스타일) ---------- */
+    #consulting {
+      background:
+        radial-gradient(760px 340px at 10% 0%, #eae5ff 0%, rgba(234, 229, 255, 0) 62%),
+        linear-gradient(180deg, #fbfaff 0%, #f4f3fb 100%);
+    }
+
+    .consulting-grid {
+      display: grid;
+      grid-template-columns: 0.94fr 1.06fr;
+      gap: 26px;
+      align-items: start;
+    }
+
+    .consult-guide {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .guide-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .guide-head h3 {
+      font-size: 1.08rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .guide-hours {
+      flex: none;
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: #3a22b8;
+      background: var(--accent-soft);
+      border-radius: 999px;
+      padding: 5px 11px;
+      letter-spacing: -0.01em;
+    }
+
+    .guide-item {
+      display: flex;
+      gap: 14px;
+      padding: 18px 0;
+      border-top: 1px solid #f0eff6;
+      margin-top: 12px;
+    }
+
+    .guide-item:first-of-type { margin-top: 8px; }
+
+    .guide-num {
+      flex: none;
+      width: 34px;
+      height: 34px;
+      border-radius: 11px;
+      background: var(--accent-soft);
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 0.82rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 0;
+    }
+
+    .guide-item strong {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+
+    .guide-item p {
+      font-size: 0.89rem;
+      color: #565a66;
+      line-height: 1.66;
+    }
+
+    .guide-item p b { color: #24262f; font-weight: 700; }
+
+    .consult-asks {
+      margin-top: 20px;
+      padding: 18px 18px 6px;
+      border-radius: 16px;
+      background: #f8f7fd;
+      border: 1px solid #efecfb;
+    }
+
+    .asks-title {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    .consult-asks ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .consult-asks li {
+      position: relative;
+      padding-left: 20px;
+      font-size: 0.86rem;
+      color: #565a66;
+      line-height: 1.5;
+    }
+
+    .consult-asks li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .consult-asks li strong {
+      display: block;
+      color: #24262f;
+      font-weight: 700;
+    }
+
+    .guide-contact {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid #f0eff6;
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .guide-contact a {
+      display: inline-block;
+      margin-top: 4px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .consult-card {
+      background: #fff;
+      border: 1px solid #e7e4fb;
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 24px 56px rgba(45, 24, 130, 0.1);
+    }
+
+    .field { margin-bottom: 16px; }
+
+    .field label,
+    .field-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 7px;
+      color: #24262f;
+    }
+
+    .field .req { color: var(--red); font-weight: 800; font-size: 0.82rem; }
+    .field .opt { color: var(--muted); font-weight: 600; font-size: 0.8rem; }
+
+    .input {
+      width: 100%;
+      height: 48px;
+      border: 1px solid #dcdde7;
+      border-radius: 12px;
+      padding: 0 14px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--text);
+      background: #fff;
+      transition: border-color 0.16s ease, box-shadow 0.16s ease;
+    }
+
+    .input::placeholder { color: #a6a9b4; }
+
+    .input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(54, 23, 206, 0.12);
+    }
+
+    select.input {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6' fill='none' stroke='%236b6f7a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      background-size: 18px;
+      padding-right: 42px;
+      cursor: pointer;
+    }
+
+    .input.is-invalid {
+      border-color: var(--red);
+      box-shadow: 0 0 0 3px rgba(255, 64, 78, 0.1);
+    }
+
+    .field-hint {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    .check-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .check-tile {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid #e3e4ee;
+      border-radius: 12px;
+      padding: 11px 12px;
+      font-size: 0.87rem;
+      font-weight: 600;
+      color: #3c3f4a;
+      cursor: pointer;
+      transition: border-color 0.16s ease, background 0.16s ease;
+    }
+
+    .check-tile input {
+      width: 16px;
+      height: 16px;
+      flex: none;
+      accent-color: var(--primary);
+      cursor: pointer;
+    }
+
+    .check-tile:has(input:checked) {
+      border-color: var(--primary);
+      background: var(--accent-soft);
+      color: var(--primary-dark);
+    }
+
+    .agree-block {
+      margin: 18px 0 16px;
+      padding-top: 16px;
+      border-top: 1px solid #f0eff6;
+    }
+
+    .agree-line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .agree-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      font-size: 0.87rem;
+      color: #3c3f4a;
+      padding: 6px 0;
+      flex: 1;
+      cursor: pointer;
+    }
+
+    .agree-row input {
+      width: 17px;
+      height: 17px;
+      margin-top: 2px;
+      flex: none;
+      accent-color: var(--primary);
+      cursor: pointer;
+    }
+
+    .agree-view {
+      flex: none;
+      border: none;
+      background: none;
+      color: var(--primary);
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-decoration: underline;
+      cursor: pointer;
+      padding: 6px 2px;
+    }
+
+    .privacy-box {
+      display: none;
+      margin: 6px 0 4px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: #f8f7fd;
+      border: 1px solid #efecfb;
+      font-size: 0.8rem;
+      color: #565a66;
+      line-height: 1.6;
+    }
+
+    .privacy-box.is-open { display: block; }
+    .privacy-box p + p { margin-top: 6px; }
+    .privacy-box strong { color: #24262f; }
+
+    .honey {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .consult-submit {
+      width: 100%;
+      height: 54px;
+      font-size: 1rem;
+      border-radius: 12px;
+    }
+
+    .consult-submit[disabled] {
+      opacity: 0.62;
+      cursor: default;
+      transform: none;
+    }
+
+    .form-note {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .form-error {
+      display: none;
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: #fff2f3;
+      border: 1px solid #ffd0d4;
+      color: #a80f1b;
+      font-size: 0.85rem;
+      line-height: 1.55;
+    }
+
+    .form-error.is-open { display: block; }
+
+    .error-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .consult-done {
+      text-align: center;
+      padding: 16px 2px 4px;
+    }
+
+    .consult-done[hidden] { display: none; }
+
+    .done-icon {
+      width: 62px;
+      height: 62px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .done-icon svg { width: 30px; height: 30px; }
+
+    .consult-done h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      margin-bottom: 8px;
+    }
+
+    .consult-done > p {
+      font-size: 0.92rem;
+      color: #565a66;
+      line-height: 1.62;
+    }
+
+    .done-meta {
+      margin: 18px 0;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: #f8f7fd;
+      border: 1px solid #efecfb;
+      text-align: left;
+      display: grid;
+      gap: 8px;
+      font-size: 0.86rem;
+    }
+
+    .done-meta div { display: flex; gap: 12px; }
+    .done-meta dt { flex: none; width: 84px; color: var(--muted); font-weight: 600; }
+    .done-meta dd { color: #24262f; font-weight: 700; }
+
+    .done-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .done-note {
+      margin-top: 14px;
+      font-size: 0.78rem !important;
+      color: var(--muted) !important;
+    }
+
     /* ---------- Responsive ---------- */
     @media (min-width: 1000px) {
       .br-lg { display: inline; }
@@ -1354,7 +1776,8 @@
       }
 
       .profile-box,
-      .contact-box {
+      .contact-box,
+      .consulting-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1391,12 +1814,17 @@
       .ci-item.ci-adt img { height: 14px; }
       .contact-box { padding: 28px 22px; border-radius: 22px; }
       .contact-box .cta-row { flex-direction: column; align-items: stretch; }
+      .consult-guide,
+      .consult-card { padding: 22px; border-radius: 20px; }
+      .guide-head { flex-wrap: wrap; }
+      .error-actions .btn { width: 100%; }
       .card { padding: 22px; }
       .grid-6 { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 420px) {
       .grid-4 { grid-template-columns: 1fr; }
+      .check-grid { grid-template-columns: 1fr; }
       .brand { font-size: 0.98rem; }
       .brand-mark { width: 24px; height: 24px; }
       .nav-actions .btn-primary { display: none; }
@@ -1423,7 +1851,7 @@
         bottom: 0;
         z-index: 90;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1.15fr 1fr 1fr;
         gap: 8px;
         padding: 8px 12px calc(8px + env(safe-area-inset-bottom, 0px));
         background: rgba(255, 255, 255, 0.97);
@@ -1446,6 +1874,12 @@
       }
 
       .mcta svg { width: 17px; height: 17px; flex: none; }
+
+      .mcta-book {
+        background: var(--primary);
+        color: #fff;
+        box-shadow: 0 8px 18px rgba(54, 23, 206, 0.24);
+      }
 
       .mcta-call {
         background: var(--accent-soft);
@@ -1590,6 +2024,7 @@
         <a href="#pricing">요금비교</a>
         <a href="#rental">렌탈6종</a>
         <a href="#packages">추천패키지</a>
+        <a href="#consulting">상담예약</a>
         <a href="#faq">FAQ</a>
       </nav>
       <div class="nav-actions">
@@ -1619,6 +2054,7 @@
         </div>
 
         <div class="cta-row">
+          <a href="#consulting" class="btn btn-primary">상담 예약하기</a>
           <a href="https://open.kakao.com/o/g8aVBQkg" target="_blank" rel="noopener" class="btn btn-kakao">카카오톡 상담</a>
           <a href="tel:010-5845-2242" class="btn btn-secondary">전화 상담 010-5845-2242</a>
           <a href="sms:010-5845-2242" class="btn btn-outline">문자 상담</a>
@@ -1651,7 +2087,7 @@
             <span class="badge-tag">조건별 별도 안내</span>
           </li>
         </ul>
-        <a href="https://open.kakao.com/o/g8aVBQkg" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;">내 조건 기준 견적 확인하기</a>
+        <a href="#consulting" class="btn btn-primary" style="width:100%;">상담 예약하고 맞춤 견적 받기</a>
       </aside>
     </div>
 
@@ -2187,7 +2623,143 @@
     </div>
   </section>
 
-  <!-- 8. 상담 문의 -->
+  <!-- 8. 맞춤 상담 예약 (캡스홈 /consulting 스타일) -->
+  <section id="consulting">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-kicker">상담 예약</span>
+        <h2 class="section-title">맞춤 상담 예약</h2>
+        <p class="section-desc">
+          기본정보와 희망 연락시간을 남겨주시면, <strong>전봉근 팀장</strong>이 꼭 맞는 <strong>월 고정비 절감 솔루션</strong>을 1:1로 안내해 드립니다.
+        </p>
+      </div>
+
+      <div class="consulting-grid">
+        <aside class="consult-guide">
+          <div class="guide-head">
+            <h3>상담 안내</h3>
+            <span class="guide-hours">평일 09:00 ~ 18:00</span>
+          </div>
+
+          <div class="guide-item">
+            <span class="guide-num">01</span>
+            <div>
+              <strong>상담 시간</strong>
+              <p>운영시간(평일 09:00~18:00) 내 접수 건은 <b>희망 연락시간</b>에 맞춰 연락드리며, 미선택 시 접수 순서대로 진행됩니다. 운영시간 이후 접수 건은 <b>다음 영업일 오전 9시부터</b> 순차적으로 안내드립니다.</p>
+            </div>
+          </div>
+
+          <div class="guide-item">
+            <span class="guide-num">02</span>
+            <div>
+              <strong>상담 내용</strong>
+              <p>상품 구성부터 요금, 할인 혜택, 설치 및 A/S 방법까지 한 번에 상담받으실 수 있습니다. <b>주거 형태(아파트·빌라·단독주택·매장)</b>와 설치 환경을 미리 체크해 두시면 더욱 빠르고 정확한 맞춤 상담이 가능합니다.</p>
+            </div>
+          </div>
+
+          <div class="consult-asks">
+            <p class="asks-title">이런 내용이 궁금하다면 상담해보세요</p>
+            <ul>
+              <li><strong>맞춤 상품 · 설치 구성</strong><span>우리 집·매장에는 어떤 조합이 맞을까요?</span></li>
+              <li><strong>월 고정비 절감</strong><span>지금 내는 요금에서 얼마나 줄일 수 있을까요?</span></li>
+              <li><strong>이용 · 설치 비용</strong><span>월 요금과 설치비는 얼마나 들까요?</span></li>
+              <li><strong>약정 · A/S 안내</strong><span>약정 기간과 사후관리가 궁금해요</span></li>
+            </ul>
+          </div>
+
+          <div class="guide-contact">
+            <p><strong style="color:#24262f;">전봉근 팀장</strong> · SK브로드밴드 수도권1담당 고양북부지점</p>
+            <a href="tel:010-5845-2242">전화 010-5845-2242</a>
+          </div>
+        </aside>
+
+        <div class="consult-card">
+          <form id="consultForm" class="consult-form" novalidate>
+            <div class="field">
+              <label for="cName">이름 <span class="req">(필수)</span></label>
+              <input class="input" id="cName" name="name" type="text" placeholder="이름을 입력해 주세요" autocomplete="name" required />
+            </div>
+
+            <div class="field">
+              <label for="cPhone">연락처 <span class="req">(필수)</span></label>
+              <input class="input" id="cPhone" name="phone" type="tel" inputmode="numeric" placeholder="01012345678" autocomplete="tel" required />
+              <p class="field-hint">-없이 숫자만 입력해 주세요</p>
+            </div>
+
+            <div class="field">
+              <span class="field-label" id="productsLabel">관심 상품 <span class="opt">(선택 · 복수 선택 가능)</span></span>
+              <div class="check-grid" role="group" aria-labelledby="productsLabel">
+                <label class="check-tile"><input type="checkbox" name="products" value="SK인터넷 · B tv" /><span>SK인터넷 · B tv</span></label>
+                <label class="check-tile"><input type="checkbox" name="products" value="SK매직 렌탈" /><span>SK매직 렌탈</span></label>
+                <label class="check-tile"><input type="checkbox" name="products" value="ADT캡스 보안" /><span>ADT캡스 보안</span></label>
+                <label class="check-tile"><input type="checkbox" name="products" value="3종 결합" /><span>3종 결합</span></label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="cTime">연락 선호시간 <span class="opt">(선택)</span></label>
+              <select class="input" id="cTime" name="time">
+                <option value="언제든 가능">언제든 가능</option>
+                <option value="오전 09:00~12:00">오전 09:00~12:00</option>
+                <option value="오후 12:00~15:00">오후 12:00~15:00</option>
+                <option value="오후 15:00~18:00">오후 15:00~18:00</option>
+                <option value="18:00 이후">18:00 이후</option>
+              </select>
+            </div>
+
+            <div class="agree-block">
+              <label class="agree-row"><input type="checkbox" id="cAge" /><span>[필수] 만 14세 이상입니다</span></label>
+              <div class="agree-line">
+                <label class="agree-row"><input type="checkbox" id="cPrivacy" /><span>[필수] 개인정보 수집·이용 동의</span></label>
+                <button type="button" class="agree-view" id="privacyView" aria-expanded="false" aria-controls="privacyBox">보기</button>
+              </div>
+              <div class="privacy-box" id="privacyBox">
+                <p><strong>수집 항목</strong> 이름, 연락처, 관심 상품, 연락 선호시간</p>
+                <p><strong>수집·이용 목적</strong> SK인터넷·B tv, SK매직 렌탈, ADT캡스 보안 상담 및 견적 안내</p>
+                <p><strong>보유·이용 기간</strong> 상담 완료 후 6개월 이내 파기 (관련 법령상 보존이 필요한 경우 해당 기간)</p>
+                <p><strong>동의 거부 권리</strong> 동의를 거부하실 수 있으며, 이 경우 상담 예약이 제한됩니다.</p>
+              </div>
+            </div>
+
+            <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+            <button type="submit" class="btn btn-primary consult-submit" id="consultSubmit">상담 예약하기</button>
+
+            <div class="form-error" id="consultError" role="alert">
+              접수 중 문제가 발생했습니다. 잠시 후 다시 시도하시거나 아래 번호로 바로 연락 주세요.
+              <div class="error-actions">
+                <a href="tel:010-5845-2242" class="btn btn-primary btn-sm">전화로 바로 연결 (010-5845-2242)</a>
+                <a href="https://open.kakao.com/o/g8aVBQkg" target="_blank" rel="noopener" class="btn btn-kakao btn-sm">카톡 오픈채팅 바로가기</a>
+              </div>
+            </div>
+
+            <p class="form-note">남겨주신 정보는 상담 안내 목적으로만 사용됩니다.</p>
+          </form>
+
+          <div class="consult-done" id="consultDone" hidden>
+            <div class="done-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5" /></svg>
+            </div>
+            <h3>상담 예약이 접수되었습니다!</h3>
+            <p>빠른 시간 내에 전봉근 팀장(010-5845-2242)이 연락드리겠습니다.</p>
+            <dl class="done-meta">
+              <div><dt>이름</dt><dd id="doneName">-</dd></div>
+              <div><dt>연락처</dt><dd id="donePhone">-</dd></div>
+              <div><dt>관심 상품</dt><dd id="doneProducts">선택 없음</dd></div>
+              <div><dt>연락 선호시간</dt><dd id="doneTime">언제든 가능</dd></div>
+            </dl>
+            <div class="done-actions">
+              <a href="https://open.kakao.com/o/g8aVBQkg" target="_blank" rel="noopener" class="btn btn-kakao">카톡 오픈채팅으로 바로 상담</a>
+              <a href="tel:010-5845-2242" class="btn btn-outline">전화 걸기 010-5845-2242</a>
+            </div>
+            <p class="done-note">운영시간(평일 09:00~18:00) 이후 접수 건은 다음 영업일 오전 9시부터 순차 안내드립니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. 상담 문의 -->
   <section id="contact">
     <div class="container">
       <div class="contact-box">
@@ -2235,6 +2807,10 @@
 
   <!-- 모바일 하단 고정 상담 바 (PC 숨김) -->
   <div class="mobile-cta" aria-label="빠른 상담">
+    <a href="#consulting" class="mcta mcta-book">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 3v3M17 3v3M4.5 9.5h15M6 5h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      상담 예약
+    </a>
     <a href="tel:010-5845-2242" class="mcta mcta-call">
       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.3 1l-2.1 2.3z" fill="currentColor"/></svg>
       전화 상담
@@ -2244,6 +2820,110 @@
       카톡 1분 상담
     </a>
   </div>
+
+  <script>
+    (function () {
+      var form = document.getElementById('consultForm');
+      if (!form) return;
+
+      var donePanel = document.getElementById('consultDone');
+      var errorBox = document.getElementById('consultError');
+      var submitBtn = document.getElementById('consultSubmit');
+      var nameInput = document.getElementById('cName');
+      var phoneInput = document.getElementById('cPhone');
+      var timeSelect = document.getElementById('cTime');
+      var ageCheck = document.getElementById('cAge');
+      var privacyCheck = document.getElementById('cPrivacy');
+      var privacyView = document.getElementById('privacyView');
+      var privacyBox = document.getElementById('privacyBox');
+
+      privacyView.addEventListener('click', function () {
+        var open = privacyBox.classList.toggle('is-open');
+        privacyView.setAttribute('aria-expanded', open ? 'true' : 'false');
+        privacyView.textContent = open ? '닫기' : '보기';
+      });
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        errorBox.classList.remove('is-open');
+        nameInput.classList.remove('is-invalid');
+        phoneInput.classList.remove('is-invalid');
+
+        var name = nameInput.value.trim();
+        var phone = phoneInput.value.replace(/[^0-9]/g, '');
+        var problems = [];
+
+        if (!name) {
+          nameInput.classList.add('is-invalid');
+          problems.push('이름');
+        }
+        if (phone.length < 9 || phone.length > 11) {
+          phoneInput.classList.add('is-invalid');
+          problems.push('연락처');
+        }
+        if (!ageCheck.checked) problems.push('만 14세 이상 동의');
+        if (!privacyCheck.checked) problems.push('개인정보 수집·이용 동의');
+
+        if (problems.length) {
+          window.alert(problems.join(', ') + ' 항목을 확인해 주세요.');
+          return;
+        }
+
+        var products = Array.prototype.map.call(
+          form.querySelectorAll('input[name="products"]:checked'),
+          function (el) { return el.value; }
+        );
+
+        var payload = {
+          '이름': name,
+          '연락처': phone,
+          '관심상품': products.length ? products.join(' / ') : '선택 없음',
+          '연락선호시간': timeSelect.value,
+          '접수경로': 'SK토탈3종 홍보페이지 상담예약 폼',
+          '_subject': '[SK토탈3종] 새 상담 예약 접수',
+          '_template': 'table',
+          '_captcha': 'false',
+          '_honey': form.querySelector('input[name="_honey"]').value
+        };
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = '접수 중...';
+
+        fetch('https://formsubmit.co/ajax/bongkoreabk2@gmail.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        })
+          .then(function (res) {
+            return res.json().catch(function () { return {}; }).then(function (data) {
+              return { ok: res.ok, data: data };
+            });
+          })
+          .then(function (result) {
+            if (!(result.ok && String(result.data.success) === 'true')) {
+              throw new Error('submit failed');
+            }
+            showDone(name, phone, products, timeSelect.value);
+          })
+          .catch(function () {
+            submitBtn.disabled = false;
+            submitBtn.textContent = '상담 예약하기';
+            errorBox.classList.add('is-open');
+            errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          });
+      });
+
+      function showDone(name, phone, products, time) {
+        document.getElementById('doneName').textContent = name;
+        document.getElementById('donePhone').textContent = phone;
+        document.getElementById('doneProducts').textContent = products.length ? products.join(' / ') : '선택 없음';
+        document.getElementById('doneTime').textContent = time;
+        form.style.display = 'none';
+        donePanel.hidden = false;
+        donePanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    })();
+  </script>
 
 </body>
 </html>
