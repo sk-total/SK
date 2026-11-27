@@ -2920,12 +2920,21 @@
 
     .is-tab-hidden { display: none !important; }
 
-    /* 히어로 헤드라인: 두 줄로 정리되도록 크기 조정 */
+    /* 히어로 헤드라인: 세 줄 정리용 */
     .hero h1 {
       font-size: clamp(1.85rem, 3.9vw, 2.5rem);
       letter-spacing: -0.05em;
-      line-height: 1.22;
+      line-height: 1.24;
     }
+
+    .hero h1 .h1-l1,
+    .hero h1 .h1-l2,
+    .hero h1 .h1-l3 { display: block; }
+
+    .hero h1 .h1-l1 { color: var(--text); }
+    .hero h1 .h1-l2 { color: var(--primary); white-space: nowrap; }
+    .hero h1 .h1-l3 { color: var(--text); }
+    .hero h1 .h1-l3 .mark { background: none; color: var(--primary); }
 
     /* ============================================================
        히어로 고객 유형 칩
@@ -3565,7 +3574,7 @@
       color: var(--primary);
     }
 
-    /* 헤더 CTA(위약금·전환 손익 무료 계산) 폭 대응 */
+    /* 헤더 CTA(전환 손익 무료 비교) 폭 대응 */
     @media (min-width: 1181px) {
       .nav-links { gap: 16px; font-size: 0.89rem; }
       .nav-actions .nav-long { font-size: 0.84rem; padding: 9px 13px; }
@@ -3621,7 +3630,7 @@
       <div class="nav-actions">
         <a href="tel:010-5845-2242" class="btn btn-outline btn-sm nav-tel">010-5845-2242</a>
         <a href="https://open.kakao.com/o/g8aVBQkg" target="_blank" rel="noopener" class="btn btn-kakao btn-sm">카톡 상담</a>
-        <a href="#contact" class="btn btn-primary btn-sm nav-long">위약금·전환 손익 무료 계산</a>
+        <a href="#contact" class="btn btn-primary btn-sm nav-long">전환 손익 무료 비교</a>
       </div>
     </div>
   </header>
@@ -3642,8 +3651,12 @@
     <div class="container hero-grid">
       <div>
         <span class="section-kicker">SK브로드밴드 수도권1담당 고양북부지점 · 현장 팀장 직통 상담 안내</span>
-        <h1>영업점 거치지 않고,<br /><span>현장 팀장이 직접 설계하는 <span class="mark h1-keep">SK&nbsp;3종 최저 실납부액</span></span></h1>
-        <p class="hero-sub">SK브로드밴드·SK매직·ADT캡스 비교부터 개통·사후관리까지, 고양북부지점 담당자가 거품 없이 안내합니다.</p>
+        <h1>
+          <span class="h1-l1">영업점 거치지 않고,</span>
+          <span class="h1-l2">설계·공사·설치 일정까지</span>
+          <span class="h1-l3">현장 팀장이 <span class="mark h1-keep">논스톱 진행</span></span>
+        </h1>
+        <p class="hero-sub">SK브로드밴드·SK매직·ADT캡스 맞춤 비교부터 미진입 지역 공사·설치 일정 조율·사후관리까지, 고양북부지점 담당자가 한 번에 끝냅니다.</p>
 
         <div class="cta-row">
           <a href="#consulting" class="btn btn-primary">내 월요금·결합 할인 1분 확인하기</a>
@@ -4288,7 +4301,7 @@
           <div class="gd-check">
             <span class="gd-check-num">01</span>
             <h4>현재 통신사 · 약정 만료일</h4>
-            <p>인터넷 약정이 남아 있으면 해지 위약금이 생길 수 있습니다. <strong>약정 만료일과 위약금</strong>을 미리 확인하면 전환 시점을 정확히 잡을 수 있고, 휴대폰 위약금·남은 할부금도 함께 확인해 두시면 좋습니다.</p>
+            <p>인터넷 약정이 남아 있으면 해지 위약금이 생길 수 있습니다. <strong>본인 통신사 고객센터에서 약정 만료일과 예상 해지 위약금</strong>을 확인해 두시면 전환 시점을 정확히 잡을 수 있고, 휴대폰 위약금·남은 할부금도 함께 확인해 두시면 좋습니다.</p>
           </div>
           <div class="gd-check">
             <span class="gd-check-num">02</span>
@@ -4330,7 +4343,7 @@
         <details>
           <summary>Q3. 지금 쓰는 인터넷 약정이 아직 남았는데, 위약금 때문에 바꾸기 애매합니다.</summary>
           <ul>
-            <li>약정이 남았더라도 <strong>남은 위약금과 전환 시 절감되는 요금·혜택을 비교</strong>해 손익이 나는 경우에만 전환을 권해드립니다.</li>
+            <li>약정이 남았더라도 <strong>알려주신 남은 위약금과 전환 시 절감되는 요금·혜택을 비교</strong>해 손익이 나는 경우에만 전환을 권해드립니다.</li>
             <li>현재 통신사 고객센터에서 <strong>① 약정 만료일 ② 예상 해지 위약금</strong> 두 가지만 확인해 카톡으로 보내주시면, 지금 바꾸는 게 유리한지 만료 후 바꾸는 게 유리한지 <strong>숫자로 정확히 비교</strong>해 드립니다.</li>
           </ul>
         </details>
@@ -4506,7 +4519,7 @@
         <h2 class="section-title">매장은 <span class="mark">출동경비</span>, 집은 <span class="mark">캡스홈</span>으로 지킵니다</h2>
         <p class="section-desc">
           24시간 출동경비, 매장·사무실 CCTV, 현관·실내 보안(캡스홈)까지 <strong>설치 환경과 운영 목적에 맞춰</strong> 구성합니다.
-          보안 상품은 <strong>36개월 약정</strong> 기준으로 안내하고, 기존 통신사 약정·위약금 여부는 상담 시 무료로 확인해 드립니다.
+          보안 상품은 <strong>36개월 약정</strong> 기준으로 안내합니다. 기존 통신사 약정·위약금은 고객님이 본인 통신사에서 직접 확인해 주시면, 전환 손익을 함께 비교해 드립니다.
         </p>
       </div>
 
@@ -4762,7 +4775,7 @@
             <h4>약정 · 위약금</h4>
             <ul>
               <li>인터넷·보안은 <b>36개월</b>, 렌탈은 <b>60개월</b> 기본 약정입니다.</li>
-              <li>기존 통신사 <b>위약금 발생 여부를 무료로 사전 확인</b>해 드립니다.</li>
+              <li>기존 통신사 <b>위약금</b>은 고객님이 해당 통신사 고객센터에서 <b>직접 확인</b>하셔야 합니다.</li>
               <li>약정 만료 <b>1개월 전</b>부터 재비교·재약정 상담이 가능합니다.</li>
             </ul>
           </article>
